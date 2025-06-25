@@ -1,8 +1,8 @@
 -- 这里是BagPanel面板的挂载脚本
 -- 而我们的背包面板，无非就是要完成以下功能：
-    -- a. 监听 退出按钮
-    -- b. 监听页签的切换
-    -- c. 更新道具信息（读取玩家数据;读取子对象Content并为其添加“格子”子对象）
+-- a. 监听 退出按钮
+-- b. 监听页签的切换
+-- c. 更新道具信息（读取玩家数据;读取子对象Content并为其添加“格子”子对象）
 
 -- 1. 一个面板对应一个表
 BagPanel = {}
@@ -29,7 +29,10 @@ BagPanel.nowType = -1
 function BagPanel:Init()
     if self.panelObj == nil then
         -- a. 实例化 面板对象
-        self.panelObj = ABMgr:LoadRes("ui", "BagPanel", typeof(GameObject))
+        --self.panelObj = ABMgr:LoadRes("ui", "BagPanel", typeof(GameObject))
+
+        self.panelObj = ABMgr:ResourcesLoad("Prefabs/UI/BagPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
+
         self.panelObj.transform:SetParent(Canvas, false)
 
         -- b. 获取面板控件
@@ -37,13 +40,13 @@ function BagPanel:Init()
         -- self.btnRole = self.panelObj.transform:Find("btnRole"):GetComponent((typeof(Button)))
         self.btnClose = self.panelObj.transform:Find("btnClose"):GetComponent((typeof(Button)))
         --  3个toggle
-        local group = self.panelObj.transform:Find("Group")  
-        if group then  
-            self.togEquip = group:Find("togEquip"):GetComponent(typeof(Toggle))  
-            self.togItem = group:Find("togItem"):GetComponent(typeof(Toggle)) 
-            self.togGem = group:Find("togGem"):GetComponent((typeof(Toggle))) 
+        local group = self.panelObj.transform:Find("Group")
+        if group then
+            self.togEquip = group:Find("togEquip"):GetComponent(typeof(Toggle))
+            self.togItem = group:Find("togItem"):GetComponent(typeof(Toggle))
+            self.togGem = group:Find("togGem"):GetComponent((typeof(Toggle)))
         end
-        
+
         --  sv相关
         self.svBag = self.panelObj.transform:Find("svBag"):GetComponent((typeof(ScrollRect)))
         self.Content = self.svBag.transform:Find("Viewport"):Find("Content")
@@ -69,6 +72,7 @@ function BagPanel:Init()
         end)
     end
 end
+
 -- 面板的显隐
 function BagPanel:ShowMe()
     self:Init()
@@ -84,7 +88,6 @@ function BagPanel:HideMe()
     self.panelObj:SetActive(false)
 end
 
-
 -- 处理页签切换逻辑(1-装备;2-道具;3-砖石)
 function BagPanel:ChangeType(type)
     -- print("Oro测试：当前页签类型为："..type) -- 测试
@@ -92,7 +95,7 @@ function BagPanel:ChangeType(type)
     if self.nowType == type then
         return
     end
-    
+
     -- 下面,我们来粗暴的处理“页签切换”逻辑
     -- a. 更新之前,删除原页签的内容
     for i = 1, #self.items do
@@ -122,7 +125,7 @@ function BagPanel:ChangeType(type)
         -- 1> 根据数据,创建“道具格子”对象
         local grid = ItemGrid:new()
         -- 2> 实例化 对象, 并设置位置(math.floor(...)将浮点数结果向下取整到最接近的整数，这确保了行数的完整)
-        grid:Init(self.Content, (i-1)%4*180 - 175*2, math.floor((i-1)/4)*(-180)+170*2)
+        grid:Init(self.Content, (i - 1) % 4 * 180 - 175 * 2, math.floor((i - 1) / 4) * (-180) + 170 * 2)
         -- 3> 初始化对象信息,设置图标&数量
         grid:InitData(nowItems[i])
 
@@ -150,7 +153,7 @@ function BagPanel:ChangeType(type)
         grid.imgIcon.sprite = spriteAtlas:GetSprite(strs[2])
         --- 设置文本
         grid.Text.text = nowItems[i].num
-        --]]--
+        --]] --
 
         -- 存储到BagPanel.items表中
         table.insert(self.items, grid)

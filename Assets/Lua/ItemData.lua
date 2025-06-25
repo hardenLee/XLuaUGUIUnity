@@ -2,7 +2,9 @@
 
 -- 1.将 ItemData.json 从AB包中加载出来
 --  加载的json文件 所存储的 TextAsset对象
-local txt = ABMgr:LoadRes("json", "ItemData", typeof(CS.UnityEngine.TextAsset))
+--local txt = ABMgr:LoadRes("json", "ItemData", typeof(CS.UnityEngine.TextAsset))
+local txt = ABMgr:ResourcesLoad("Json/ItemData", typeof(CS.UnityEngine.TextAsset)) -- 这里的`ABMgr:ResourcesLoad`是一个自定义的加载方法
+
 --- print(txt.text)-- 测试
 
 -- 2. 获取txt的文本信息，并进行解析
@@ -17,7 +19,7 @@ local itemList = Json.decode(txt.text)
 ItemData = {}
 
 -- 通过for遍历itemList，其中 下标为_(不重要)，值为value
-for _,value in pairs(itemList) do
+for _, value in pairs(itemList) do
     -- ItemDat新建一个键为value.id，值为value的元素
     ItemData[value.id] = value
 end

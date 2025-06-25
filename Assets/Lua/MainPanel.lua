@@ -12,7 +12,7 @@ MainPanel = {} -- 1. 我们需要通过这一张“表”来 控制/监听 面�
 MainPanel.panelObj = nil -- 关联的面板对象
 MainPanel.btnRole = nil  -- 对应的面板控件
 MainPanel.btnCharacter = nil
---MainPanel.btnMyCharacter = nil
+MainPanel.btnMyCharacter = nil
 
 
 -- 3. 初始化该面板（实现下述的需求）
@@ -69,7 +69,7 @@ end
 
 function MainPanel:btnCharacterClick()
     BackpackPanel:ShowMe()
-    CreateObj()
+    --CreateObj()
 end
 
 function CreateObj()
