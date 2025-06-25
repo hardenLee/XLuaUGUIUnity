@@ -15,9 +15,9 @@ Transform = CS.UnityEngine.Transform
 RectTransform = CS.UnityEngine.RectTransform
 Resources = CS.UnityEngine.Resources
 
--- 获取Unity的Lua接口  
-Collider = CS.UnityEngine.Collider  
-Physics = CS.UnityEngine.Physics  
+-- 获取Unity的Lua接口
+Collider = CS.UnityEngine.Collider
+Physics = CS.UnityEngine.Physics
 
 TextAsset = CS.UnityEngine.TextAsset
 
@@ -44,3 +44,4 @@ LuaCallPhysics = CS.LuaCallPhysics
 -- 方面在MainPanel等面板类直接设置父对象（仅在这里获取一次Canvas即可，避免多次重复获取）
 Canvas = GameObject.Find("Canvas").transform
 
+UIManager = require("UIManager") -- UI管理器
