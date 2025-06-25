@@ -1,0 +1,10 @@
+[
+    {"id":1001,"name":"手电筒","icon":"Icon_02","type":1,"tips":"就是一个普通的手电筒"},
+    {"id":1002,"name":"烟斗","icon":"Icon_03","type":1,"tips":"看着像一个用过的旧烟斗"},
+    {"id":1003,"name":"刘大炮","icon":"Icon_04","type":1,"tips":"吾之伟大室友酱"},
+    {"id":1004,"name":"止痛药","icon":"Icon_05","type":2,"tips":"恢复体力"},
+    {"id":1005,"name":"过期的药丸","icon":"Icon_06","type":2,"tips":"恢复智力（过期了也大概④不了吧？）"},
+    {"id":1006,"name":"钥匙","icon":"Icon_07","type":3,"tips":"用于兑换道具"},
+    {"id":1007,"name":"勋章","icon":"Icon_08","type":3,"tips":"用于合成道具"},
+    {"id":1008,"name":"墨镜","icon":"Icon_09","type":1,"tips":"不知道有什么用捏"}
+]
