@@ -11,23 +11,22 @@ require("ItemData") -- 2.加载Jaon数据 到Lua中
 require("PlayerData") -- 3.初始化玩家数据
 
 -- 4. 执行 面板 逻辑
-require("MainPanel")
-require("BagPanel")
-require("ItemGrid")
+-- require("MainPanel")
+-- require("BagPanel")
+-- require("ItemGrid")
+-- require("BackpackPanel")
 
-require("BackpackPanel")
 require("LuaUpdate")
 -- LuaCallPhysics()
 require("ItemsTest")
 
 -- MainPanel:Init() -- 参考MainPanel/优化2
-MainPanel:ShowMe()
+--MainPanel:ShowMe()
 LuaUpdate:Init()
 
 
 UIManager:Init()
 
-UIManager:RegisterPanel("UIMain", require("UIMain")) -- 注册MainPanel面板
 UIManager:ShowPanel("UIMain")
 
 LuaUpdate:Update()
