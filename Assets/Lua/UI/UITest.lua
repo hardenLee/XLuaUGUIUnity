@@ -12,7 +12,7 @@ end
 function UITest:InstantiateUI()
     print("lyk InstantiateUI called")
     self.panelObj = ABManager:ResourcesLoad("Prefabs/UI/UITest", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
-    self.panelObj.transform:SetParent(Canvas, false)
+    self.panelObj.transform:SetParent(CanvasLow, false)
 end
 
 function UITest:InitUI()

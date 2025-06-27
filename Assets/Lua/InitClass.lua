@@ -43,6 +43,10 @@ LuaCallPhysics = CS.LuaCallPhysics
 -- 补充-获取Canvas对象.位置
 -- 方面在MainPanel等面板类直接设置父对象（仅在这里获取一次Canvas即可，避免多次重复获取）
 Canvas = GameObject.Find("Canvas").transform
+CanvasLow = GameObject.Find("Low").transform
+CanvasMid = GameObject.Find("Mid").transform
+CanvasHigh = GameObject.Find("High").transform
+
 
 -- 4.管理器类
 UIManager = require("Manager/UIManager") -- UI管理器
