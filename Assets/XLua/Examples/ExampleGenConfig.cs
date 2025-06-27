@@ -48,7 +48,8 @@ public static class ExampleGenConfig
                 typeof(Mathf),
                 typeof(System.Collections.Generic.List<int>),
                 typeof(Action<string>),
-                typeof(UnityEngine.Debug)
+                typeof(UnityEngine.Debug),
+                typeof(LoopScrollRectEx),
             };
 
     //C#静态调用Lua的配置（包括事件的原型），仅可以配delegate，interface
@@ -59,7 +60,9 @@ public static class ExampleGenConfig
                 typeof(Action<string>),
                 typeof(Action<double>),
                 typeof(UnityEngine.Events.UnityAction),
-                typeof(System.Collections.IEnumerator)
+                typeof(System.Collections.IEnumerator),
+                typeof(Func<int, object>),
+                typeof(Action<GameObject, int, object>),
             };
 
     //黑名单

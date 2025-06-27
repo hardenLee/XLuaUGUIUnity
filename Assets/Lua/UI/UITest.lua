@@ -4,9 +4,14 @@ UITest.panelObj = nil -- 关联的面板对象
 UITest.btnRole = nil
 UITest.btnCharacter = nil
 
+UITest.scrollList = nil -- LoopScrollRectEx 组件引用
+UITest.testData = {}    -- 测试数据
+
 function UITest:Show()
-    self:InstantiateUI() -- 实例化面板
-    self:InitUI()        -- 初始化面板控件
+    self:InstantiateUI()  -- 实例化面板
+    self:InitUI()         -- 初始化面板控件
+
+    self:InitScrollList() -- 初始化滚动列表
 end
 
 function UITest:InstantiateUI()
@@ -21,6 +26,32 @@ function UITest:InitUI()
     -- 为按钮添加点击事件监听
     self.btnRole.onClick:AddListener(function() self:OnBtnRoleClick() end)
     self.btnCharacter.onClick:AddListener(function() self:OnBtnCharacterClick() end)
+
+    -- 获取 LoopScrollRectEx 组件（挂载在 Scroll View 节点上）
+    self.scrollList = self.panelObj.transform:Find("LoopScrollRectEx"):GetComponent(typeof(CS.LoopScrollRectEx))
+end
+
+function UITest:InitScrollList()
+    self.testData = {}
+    for i = 1, 100 do
+        table.insert(self.testData, "lyk " .. i)
+    end
+
+    -- 初始化滚动列表
+    self.scrollList.itemPrefab = self.panelObj.transform:Find("LoopScrollRectEx/Scroll View/Viewport/Content/Item")
+        .gameObject
+
+    self.scrollList:Init(self.GetItemData, self.OnItemUpdate)
+end
+
+-- 定义的独立函数
+function UITest.GetItemData(index)
+    return UITest.testData[index + 1]
+end
+
+function UITest.OnItemUpdate(go, index, data)
+    local text = go.transform:Find("Text"):GetComponent(typeof(CS.TMPro.TextMeshProUGUI))
+    text.text = data
 end
 
 function UITest:Hide()

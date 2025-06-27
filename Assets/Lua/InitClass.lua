@@ -36,9 +36,9 @@ Toggle = UI.Toggle
 ScrollRect = UI.ScrollRect
 
 -- 3.自定义的C#类
-ABManager = CS.ABManager.Instance() -- 直接得到AB包加载管理器器的单例对象
+ABManager = CS.ABManager.Instance()    -- 直接得到AB包加载管理器器的单例对象
 LuaCallPhysics = CS.LuaCallPhysics
-
+LoopScrollRectEx = CS.LoopScrollRectEx -- 循环滚动视图组件
 
 -- 补充-获取Canvas对象.位置
 -- 方面在MainPanel等面板类直接设置父对象（仅在这里获取一次Canvas即可，避免多次重复获取）
