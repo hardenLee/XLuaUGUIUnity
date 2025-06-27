@@ -36,7 +36,7 @@ Toggle = UI.Toggle
 ScrollRect = UI.ScrollRect
 
 -- 3.自定义的C#类
-ABManager = CS.ABManager.GetInstance() -- 直接得到AB包加载管理器器的单例对象
+ABManager = CS.ABManager.Instance() -- 直接得到AB包加载管理器器的单例对象
 LuaCallPhysics = CS.LuaCallPhysics
 
 

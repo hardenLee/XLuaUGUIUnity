@@ -10,7 +10,7 @@ public class SingletonAutoMono<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
 
-    public static T GetInstance()
+    public static T Instance()
     {
         if( instance == null )
         {
