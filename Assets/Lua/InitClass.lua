@@ -3,11 +3,11 @@
 -- 1.自定义的Lua类
 -- **执行**自定义的Lua类，方便后期直接调用它们名下的方法
 -- 面向对象Object.lua
-require("Object")
+require("Core/Object")
 -- 字符串拆分 SplitTools.lua
-require("SplitTools")
+require("Utils/SplitTools")
 -- Json解析
-Json = require("JsonUtility")
+Json = require("Utils/JsonUtility")
 
 -- 2.Unity自带C#类
 GameObject = CS.UnityEngine.GameObject
@@ -36,7 +36,7 @@ Toggle = UI.Toggle
 ScrollRect = UI.ScrollRect
 
 -- 3.自定义的C#类
-ABMgr = CS.ABMgr.GetInstance() -- 直接得到AB包加载管理器器的单例对象
+ABManager = CS.ABManager.GetInstance() -- 直接得到AB包加载管理器器的单例对象
 LuaCallPhysics = CS.LuaCallPhysics
 
 
@@ -44,4 +44,5 @@ LuaCallPhysics = CS.LuaCallPhysics
 -- 方面在MainPanel等面板类直接设置父对象（仅在这里获取一次Canvas即可，避免多次重复获取）
 Canvas = GameObject.Find("Canvas").transform
 
-UIManager = require("UIManager") -- UI管理器
+-- 4.管理器类
+UIManager = require("Manager/UIManager") -- UI管理器

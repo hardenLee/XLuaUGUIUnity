@@ -9,8 +9,8 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LuaMgr.GetInstance().Init();
-        LuaMgr.GetInstance().DoLuaFile("Main");
+        LuaManager.Instance().Init();
+        LuaManager.Instance().DoLuaFile("Main");
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         Camera worldCamera = canvas.worldCamera;
     }
@@ -18,8 +18,8 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //LuaMgr.GetInstance().DoLuaFile("LuaUpdate");
-        LuaMgr.GetInstance().CallLuaUpdateEveryFrame();
+        //LuaManager.Instance().DoLuaFile("LuaUpdate");
+        LuaManager.Instance().CallLuaUpdateEveryFrame();
 
         //if (Input.GetMouseButtonDown(0)) 
         //{

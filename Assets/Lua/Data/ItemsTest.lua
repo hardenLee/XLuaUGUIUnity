@@ -17,8 +17,8 @@ function ItemsTest:Init(father, posX, posY, name, Pos_X, Pos_Y, objBox)
     -- self.name = self:GetItemsName(name)
     self.name = name
     table.insert(self.Pos, { x = Pos_X, y = Pos_Y, box = objBox })
-    --self.obj = ABMgr:LoadRes("items", name, typeof(GameObject))
-    self.obj = ABMgr:ResourcesLoad("items/" .. name, typeof(GameObject))
+    --self.obj = ABManager:LoadRes("items", name, typeof(GameObject))
+    self.obj = ABManager:ResourcesLoad("items/" .. name, typeof(GameObject))
 
     if self.obj then
         -- 设置父级和位置
@@ -49,8 +49,8 @@ function ItemsTest:InitData(data)
     local itemdata = ItemData[data.id]
     -- 根据data加载图集，再加载其图标
     local strs = string.split(itemdata.icon, "_")
-    --local spriteAtlas = ABMgr:LoadRes("ui", strs[1], typeof(SpriteAtlas))
-    local spriteAtlas = ABMgr:ResourcesLoad("SpriteAltas/" .. strs[1], typeof(SpriteAtlas))
+    --local spriteAtlas = ABManager:LoadRes("ui", strs[1], typeof(SpriteAtlas))
+    local spriteAtlas = ABManager:ResourcesLoad("SpriteAltas/" .. strs[1], typeof(SpriteAtlas))
     self.imgIcon.sprite = spriteAtlas:GetSprite(strs[2])
     -- 设置文本
     self.Text.text = data.num
@@ -92,8 +92,8 @@ function ItemsTest:FollowingMouse(name)
     self:Destroy()
 
     -- 获取预制体并初始化
-    --local prefab = ABMgr:LoadRes("items", name, typeof(GameObject))
-    local prefab = ABMgr:ResourcesLoad("items/" .. name, typeof(GameObject))
+    --local prefab = ABManager:LoadRes("items", name, typeof(GameObject))
+    local prefab = ABManager:ResourcesLoad("items/" .. name, typeof(GameObject))
 
     if not prefab then
         error("Prefab not found at path: AB/items/" .. name)
@@ -209,8 +209,8 @@ function ItemsTest:InstantiatePrefabAtMousePosition(name)
     -- print("[mousePos] mousePosition.x = " .. mousePosition.x .. "; mousePosition.y = " .. mousePosition.y)
 
     if mousePosition then
-        --local instance = ABMgr:LoadRes("items", name, typeof(GameObject))
-        local instance = ABMgr:ResourcesLoad("items/" .. name, typeof(GameObject))
+        --local instance = ABManager:LoadRes("items", name, typeof(GameObject))
+        local instance = ABManager:ResourcesLoad("items/" .. name, typeof(GameObject))
         if instance then
             local canvas = GameObject.Find("Canvas")
             if canvas then

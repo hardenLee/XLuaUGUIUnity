@@ -21,9 +21,9 @@ function MainPanel:Init()
     -- 所以我们对panelObj进行判断（仅当panelObj面板对象没有被初始化时才进行初始化逻辑）
     if self.panelObj == nil then
         -- a. 完成面板的实例化
-        -- a1. 利用ABMgr加载AB包中的面板
-        --self.panelObj = ABMgr:LoadRes("ui", "MainPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
-        self.panelObj = ABMgr:ResourcesLoad("Prefabs/UI/MainPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
+        -- a1. 利用ABManager加载AB包中的面板
+        --self.panelObj = ABManager:LoadRes("ui", "MainPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
+        self.panelObj = ABManager:ResourcesLoad("Prefabs/UI/MainPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
 
         -- a2. 设置面板父对象：Canvas（因为Canvas的使用频率非常的频繁，所以我们可以在InitClass的时候就获取它，以方便其他类的调用）
         self.panelObj.transform:SetParent(Canvas, false)

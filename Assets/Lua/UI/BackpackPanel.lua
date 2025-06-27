@@ -45,9 +45,9 @@ BackpackPanel.nearbyItem = nil -- 附近物品
 function BackpackPanel:Init()
     if self.panelObj == nil then
         -- 实例化 面板对象
-        --self.panelObj = ABMgr:LoadRes("ui", "BackpackPanel", typeof(GameObject))
+        --self.panelObj = ABManager:LoadRes("ui", "BackpackPanel", typeof(GameObject))
 
-        self.panelObj = ABMgr:ResourcesLoad("Prefabs/UI/BackpackPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
+        self.panelObj = ABManager:ResourcesLoad("Prefabs/UI/BackpackPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
 
         self.panelObj.transform:SetParent(Canvas, false)
 

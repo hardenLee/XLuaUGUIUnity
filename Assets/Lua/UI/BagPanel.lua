@@ -29,9 +29,9 @@ BagPanel.nowType = -1
 function BagPanel:Init()
     if self.panelObj == nil then
         -- a. 实例化 面板对象
-        --self.panelObj = ABMgr:LoadRes("ui", "BagPanel", typeof(GameObject))
+        --self.panelObj = ABManager:LoadRes("ui", "BagPanel", typeof(GameObject))
 
-        self.panelObj = ABMgr:ResourcesLoad("Prefabs/UI/BagPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
+        self.panelObj = ABManager:ResourcesLoad("Prefabs/UI/BagPanel", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
 
         self.panelObj.transform:SetParent(Canvas, false)
 
@@ -135,7 +135,7 @@ function BagPanel:ChangeType(type)
 
         -- 用一张新表 来代替单个“格子面板”,存储其属性
         local grid = {}
-        grid.obj = ABMgr:LoadRes("ui", "ItemGrid", typeof(GameObject))
+        grid.obj = ABManager:LoadRes("ui", "ItemGrid", typeof(GameObject))
         -- 设置父对象
         grid.obj.transform:SetParent(self.Content, false)
         -- 继续设置其位置，防止多个“格子”重叠
@@ -149,7 +149,7 @@ function BagPanel:ChangeType(type)
         local data = ItemData[nowItems[i].id]
         ---- 根据data加载图集，再加载其图标
         local strs = string.split(data.icon, "_")
-        local spriteAtlas = ABMgr:LoadRes("ui", strs[1], typeof(SpriteAtlas))
+        local spriteAtlas = ABManager:LoadRes("ui", strs[1], typeof(SpriteAtlas))
         grid.imgIcon.sprite = spriteAtlas:GetSprite(strs[2])
         --- 设置文本
         grid.Text.text = nowItems[i].num

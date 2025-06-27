@@ -2,8 +2,8 @@
 
 -- 1.将 ItemData.json 从AB包中加载出来
 --  加载的json文件 所存储的 TextAsset对象
---local txt = ABMgr:LoadRes("json", "ItemData", typeof(CS.UnityEngine.TextAsset))
-local txt = ABMgr:ResourcesLoad("Json/ItemData", typeof(CS.UnityEngine.TextAsset)) -- 这里的`ABMgr:ResourcesLoad`是一个自定义的加载方法
+--local txt = ABManager:LoadRes("json", "ItemData", typeof(CS.UnityEngine.TextAsset))
+local txt = ABManager:ResourcesLoad("Json/ItemData", typeof(CS.UnityEngine.TextAsset)) -- 这里的`ABManager:ResourcesLoad`是一个自定义的加载方法
 
 --- print(txt.text)-- 测试
 

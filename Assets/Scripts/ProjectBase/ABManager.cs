@@ -9,7 +9,7 @@ using Object = UnityEngine.Object;
 /// <summary>
 /// 加载资源管理器 后期会修改yooAsset,addressable等资源加载方式
 /// </summary>
-public class ABMgr : SingletonAutoMono<ABMgr>
+public class ABManager : SingletonAutoMono<ABManager>
 {
     public Object ResourcesLoad(string path, Type type)
     {

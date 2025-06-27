@@ -7,7 +7,7 @@ using XLua;
 /// <summary>
 /// Lua管理器
 /// </summary>
-public class LuaMgr : BaseManager<LuaMgr>
+public class LuaManager : BaseManager<LuaManager>
 {
     private LuaEnv luaEnv; // 确保这个 LuaEnv 是被正确初始化的  
     private LuaTable luaUpdateTable; // 用于存储 LuaUpdate 对象 ///-->【调用Update方法】<--
@@ -36,7 +36,7 @@ public class LuaMgr : BaseManager<LuaMgr>
     private byte[] MyCustomLoader(ref string filepath)
     {
         //测试传入的参数是什么
-        Debug.Log("LuaMgr：" + filepath);
+        Debug.Log("LuaManager" + filepath);
         //决定Lua文件所在路径
         string path = Application.dataPath + "/Lua/" + filepath + ".lua";
         //C#自带的文件读取类
@@ -54,7 +54,7 @@ public class LuaMgr : BaseManager<LuaMgr>
     // private byte[] MyCustomLoaderFormAB(ref string filepath)
     // {
     //     //改为我们的AB包管理器加载
-    //     TextAsset file2 = ABMgr.GetInstance().LoadRes<TextAsset>("lua", filepath + ".lua");
+    //     TextAsset file2 = ABManager.Instance().LoadRes<TextAsset>("lua", filepath + ".lua");
     //     if (file2 != null)
     //         return file2.bytes;
     //     else
@@ -98,8 +98,8 @@ public class LuaMgr : BaseManager<LuaMgr>
         // 获取Lua中的更新函数  
         luaUpdateFunction = luaEnv.Global.GetInPath<LuaFunction>("CsherpCallUpdate");
         //if (luaUpdateFunction != null)
-            // 调用Lua更新函数（注意：这里没有传递参数，如果你的函数需要参数，请在这里传递）  
-            luaUpdateFunction.Call();
+        // 调用Lua更新函数（注意：这里没有传递参数，如果你的函数需要参数，请在这里传递）  
+        luaUpdateFunction.Call();
         //else
         //    Debug.Log("luaUpdateFunction is null");
 

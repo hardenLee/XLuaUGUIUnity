@@ -1,7 +1,7 @@
 local UIManager = {}
 
 UIManager.panels = {} -- 存储所有面板的表
-local PanelPaths = require("PanelPaths")
+local PanelPaths = require("Config/UIPathConfig")
 UIManager.panelRequirePaths = PanelPaths
 
 

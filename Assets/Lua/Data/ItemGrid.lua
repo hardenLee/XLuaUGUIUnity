@@ -11,8 +11,8 @@ ItemGrid.Text = nil
 --- father >> 父对象,相对于BagPanel.Content
 --- posX、posY >> BagPanel:ChangeType里面用于计算“格子”位置的参数
 function ItemGrid:Init(father, posX, posY)
-    --self.obj = ABMgr:LoadRes("ui", "ItemGrid", typeof(GameObject))
-    self.obj = ABMgr:ResourcesLoad("Prefabs/UI/ItemGrid", typeof(GameObject))
+    --self.obj = ABManager:LoadRes("ui", "ItemGrid", typeof(GameObject))
+    self.obj = ABManager:ResourcesLoad("Prefabs/UI/ItemGrid", typeof(GameObject))
     self.obj.transform:SetParent(father, false)
 
     self.obj.transform.localPosition = Vector3(posX, posY, 0)
@@ -29,8 +29,8 @@ function ItemGrid:InitData(data)
     local itemdata = ItemData[data.id]
     -- 根据data加载图集，再加载其图标
     local strs = string.split(itemdata.icon, "_")
-    --local spriteAtlas = ABMgr:LoadRes("ui", strs[1], typeof(SpriteAtlas))
-    local spriteAtlas = ABMgr:ResourcesLoad("SpriteAltas/" .. strs[1], typeof(SpriteAtlas))
+    --local spriteAtlas = ABManager:LoadRes("ui", strs[1], typeof(SpriteAtlas))
+    local spriteAtlas = ABManager:ResourcesLoad("SpriteAltas/" .. strs[1], typeof(SpriteAtlas))
     self.imgIcon.sprite = spriteAtlas:GetSprite(strs[2])
     -- 设置文本
     self.Text.text = data.num
