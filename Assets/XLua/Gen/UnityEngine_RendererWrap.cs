@@ -21,7 +21,7 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(UnityEngine.Renderer);
-			Utils.BeginObjectRegister(type, L, translator, 0, 8, 31, 27);
+			Utils.BeginObjectRegister(type, L, translator, 0, 10, 31, 27);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "ResetBounds", _m_ResetBounds);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "ResetLocalBounds", _m_ResetLocalBounds);
@@ -29,6 +29,8 @@ namespace XLua.CSObjectWrap
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "SetPropertyBlock", _m_SetPropertyBlock);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetPropertyBlock", _m_GetPropertyBlock);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetMaterials", _m_GetMaterials);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "SetSharedMaterials", _m_SetSharedMaterials);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "SetMaterials", _m_SetMaterials);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetSharedMaterials", _m_GetSharedMaterials);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetClosestReflectionProbes", _m_GetClosestReflectionProbes);
 			
@@ -321,6 +323,62 @@ namespace XLua.CSObjectWrap
                     System.Collections.Generic.List<UnityEngine.Material> _m = (System.Collections.Generic.List<UnityEngine.Material>)translator.GetObject(L, 2, typeof(System.Collections.Generic.List<UnityEngine.Material>));
                     
                     gen_to_be_invoked.GetMaterials( _m );
+                    
+                    
+                    
+                    return 0;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_SetSharedMaterials(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                UnityEngine.Renderer gen_to_be_invoked = (UnityEngine.Renderer)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    System.Collections.Generic.List<UnityEngine.Material> _materials = (System.Collections.Generic.List<UnityEngine.Material>)translator.GetObject(L, 2, typeof(System.Collections.Generic.List<UnityEngine.Material>));
+                    
+                    gen_to_be_invoked.SetSharedMaterials( _materials );
+                    
+                    
+                    
+                    return 0;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_SetMaterials(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                UnityEngine.Renderer gen_to_be_invoked = (UnityEngine.Renderer)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    System.Collections.Generic.List<UnityEngine.Material> _materials = (System.Collections.Generic.List<UnityEngine.Material>)translator.GetObject(L, 2, typeof(System.Collections.Generic.List<UnityEngine.Material>));
+                    
+                    gen_to_be_invoked.SetMaterials( _materials );
                     
                     
                     

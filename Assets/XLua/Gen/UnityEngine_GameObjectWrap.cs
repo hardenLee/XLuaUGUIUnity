@@ -21,7 +21,7 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(UnityEngine.GameObject);
-			Utils.BeginObjectRegister(type, L, translator, 0, 13, 9, 3);
+			Utils.BeginObjectRegister(type, L, translator, 0, 16, 9, 3);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetComponent", _m_GetComponent);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetComponentInChildren", _m_GetComponentInChildren);
@@ -34,6 +34,9 @@ namespace XLua.CSObjectWrap
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "SendMessage", _m_SendMessage);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "BroadcastMessage", _m_BroadcastMessage);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "AddComponent", _m_AddComponent);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetComponentCount", _m_GetComponentCount);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetComponentAtIndex", _m_GetComponentAtIndex);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetComponentIndex", _m_GetComponentIndex);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "SetActive", _m_SetActive);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "CompareTag", _m_CompareTag);
 			
@@ -56,12 +59,15 @@ namespace XLua.CSObjectWrap
 			Utils.EndObjectRegister(type, L, translator, null, null,
 			    null, null, null);
 
-		    Utils.BeginClassRegister(type, L, __CreateInstance, 6, 0, 0);
+		    Utils.BeginClassRegister(type, L, __CreateInstance, 9, 0, 0);
 			Utils.RegisterFunc(L, Utils.CLS_IDX, "CreatePrimitive", _m_CreatePrimitive_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "FindWithTag", _m_FindWithTag_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "FindGameObjectWithTag", _m_FindGameObjectWithTag_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "FindGameObjectsWithTag", _m_FindGameObjectsWithTag_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "Find", _m_Find_xlua_st_);
+            Utils.RegisterFunc(L, Utils.CLS_IDX, "SetGameObjectsActive", _m_SetGameObjectsActive_xlua_st_);
+            Utils.RegisterFunc(L, Utils.CLS_IDX, "InstantiateGameObjects", _m_InstantiateGameObjects_xlua_st_);
+            Utils.RegisterFunc(L, Utils.CLS_IDX, "GetScene", _m_GetScene_xlua_st_);
             
 			
             
@@ -702,6 +708,92 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_GetComponentCount(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                UnityEngine.GameObject gen_to_be_invoked = (UnityEngine.GameObject)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    
+                        var gen_ret = gen_to_be_invoked.GetComponentCount(  );
+                        LuaAPI.xlua_pushinteger(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_GetComponentAtIndex(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                UnityEngine.GameObject gen_to_be_invoked = (UnityEngine.GameObject)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    int _index = LuaAPI.xlua_tointeger(L, 2);
+                    
+                        var gen_ret = gen_to_be_invoked.GetComponentAtIndex( _index );
+                        translator.Push(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_GetComponentIndex(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                UnityEngine.GameObject gen_to_be_invoked = (UnityEngine.GameObject)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    UnityEngine.Component _component = (UnityEngine.Component)translator.GetObject(L, 2, typeof(UnityEngine.Component));
+                    
+                        var gen_ret = gen_to_be_invoked.GetComponentIndex( _component );
+                        LuaAPI.xlua_pushinteger(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _m_SetActive(RealStatePtr L)
         {
 		    try {
@@ -826,6 +918,107 @@ namespace XLua.CSObjectWrap
                     string _name = LuaAPI.lua_tostring(L, 1);
                     
                         var gen_ret = UnityEngine.GameObject.Find( _name );
+                        translator.Push(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_SetGameObjectsActive_xlua_st_(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+            
+                
+                {
+                    Unity.Collections.NativeArray<int> _instanceIDs;translator.Get(L, 1, out _instanceIDs);
+                    bool _active = LuaAPI.lua_toboolean(L, 2);
+                    
+                    UnityEngine.GameObject.SetGameObjectsActive( _instanceIDs, _active );
+                    
+                    
+                    
+                    return 0;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_InstantiateGameObjects_xlua_st_(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+            
+			    int gen_param_count = LuaAPI.lua_gettop(L);
+            
+                if(gen_param_count == 5&& LuaTypes.LUA_TNUMBER == LuaAPI.lua_type(L, 1)&& LuaTypes.LUA_TNUMBER == LuaAPI.lua_type(L, 2)&& translator.Assignable<Unity.Collections.NativeArray<int>>(L, 3)&& translator.Assignable<Unity.Collections.NativeArray<int>>(L, 4)&& translator.Assignable<UnityEngine.SceneManagement.Scene>(L, 5)) 
+                {
+                    int _sourceInstanceID = LuaAPI.xlua_tointeger(L, 1);
+                    int _count = LuaAPI.xlua_tointeger(L, 2);
+                    Unity.Collections.NativeArray<int> _newInstanceIDs;translator.Get(L, 3, out _newInstanceIDs);
+                    Unity.Collections.NativeArray<int> _newTransformInstanceIDs;translator.Get(L, 4, out _newTransformInstanceIDs);
+                    UnityEngine.SceneManagement.Scene _destinationScene;translator.Get(L, 5, out _destinationScene);
+                    
+                    UnityEngine.GameObject.InstantiateGameObjects( _sourceInstanceID, _count, _newInstanceIDs, _newTransformInstanceIDs, _destinationScene );
+                    
+                    
+                    
+                    return 0;
+                }
+                if(gen_param_count == 4&& LuaTypes.LUA_TNUMBER == LuaAPI.lua_type(L, 1)&& LuaTypes.LUA_TNUMBER == LuaAPI.lua_type(L, 2)&& translator.Assignable<Unity.Collections.NativeArray<int>>(L, 3)&& translator.Assignable<Unity.Collections.NativeArray<int>>(L, 4)) 
+                {
+                    int _sourceInstanceID = LuaAPI.xlua_tointeger(L, 1);
+                    int _count = LuaAPI.xlua_tointeger(L, 2);
+                    Unity.Collections.NativeArray<int> _newInstanceIDs;translator.Get(L, 3, out _newInstanceIDs);
+                    Unity.Collections.NativeArray<int> _newTransformInstanceIDs;translator.Get(L, 4, out _newTransformInstanceIDs);
+                    
+                    UnityEngine.GameObject.InstantiateGameObjects( _sourceInstanceID, _count, _newInstanceIDs, _newTransformInstanceIDs );
+                    
+                    
+                    
+                    return 0;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+            return LuaAPI.luaL_error(L, "invalid arguments to UnityEngine.GameObject.InstantiateGameObjects!");
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_GetScene_xlua_st_(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+            
+                
+                {
+                    int _instanceID = LuaAPI.xlua_tointeger(L, 1);
+                    
+                        var gen_ret = UnityEngine.GameObject.GetScene( _instanceID );
                         translator.Push(L, gen_ret);
                     
                     

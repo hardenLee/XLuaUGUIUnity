@@ -31,7 +31,7 @@ namespace XLua.CSObjectWrap
 			Utils.EndObjectRegister(type, L, translator, null, null,
 			    null, null, null);
 
-		    Utils.BeginClassRegister(type, L, __CreateInstance, 17, 3, 1);
+		    Utils.BeginClassRegister(type, L, __CreateInstance, 17, 4, 2);
 			Utils.RegisterFunc(L, Utils.CLS_IDX, "DrawLine", _m_DrawLine_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "DrawRay", _m_DrawRay_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "Break", _m_Break_xlua_st_);
@@ -52,10 +52,12 @@ namespace XLua.CSObjectWrap
 			
             
 			Utils.RegisterFunc(L, Utils.CLS_GETTER_IDX, "unityLogger", _g_get_unityLogger);
+            Utils.RegisterFunc(L, Utils.CLS_GETTER_IDX, "developerConsoleEnabled", _g_get_developerConsoleEnabled);
             Utils.RegisterFunc(L, Utils.CLS_GETTER_IDX, "developerConsoleVisible", _g_get_developerConsoleVisible);
             Utils.RegisterFunc(L, Utils.CLS_GETTER_IDX, "isDebugBuild", _g_get_isDebugBuild);
             
-			Utils.RegisterFunc(L, Utils.CLS_SETTER_IDX, "developerConsoleVisible", _s_set_developerConsoleVisible);
+			Utils.RegisterFunc(L, Utils.CLS_SETTER_IDX, "developerConsoleEnabled", _s_set_developerConsoleEnabled);
+            Utils.RegisterFunc(L, Utils.CLS_SETTER_IDX, "developerConsoleVisible", _s_set_developerConsoleVisible);
             
 			
 			Utils.EndClassRegister(type, L, translator);
@@ -839,6 +841,18 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_developerConsoleEnabled(RealStatePtr L)
+        {
+		    try {
+            
+			    LuaAPI.lua_pushboolean(L, UnityEngine.Debug.developerConsoleEnabled);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _g_get_developerConsoleVisible(RealStatePtr L)
         {
 		    try {
@@ -863,6 +877,19 @@ namespace XLua.CSObjectWrap
         }
         
         
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _s_set_developerConsoleEnabled(RealStatePtr L)
+        {
+		    try {
+                
+			    UnityEngine.Debug.developerConsoleEnabled = LuaAPI.lua_toboolean(L, 1);
+            
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 0;
+        }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _s_set_developerConsoleVisible(RealStatePtr L)

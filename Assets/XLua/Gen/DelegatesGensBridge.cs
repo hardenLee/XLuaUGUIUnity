@@ -702,6 +702,50 @@ namespace XLua
 #endif
 		}
         
+		public System.Threading.Tasks.Task __Gen_Delegate_Imp30(object p0)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int errFunc = LuaAPI.pcall_prepare(L, errorFuncRef, luaReference);
+                ObjectTranslator translator = luaEnv.translator;
+                translator.PushAny(L, p0);
+                
+                PCall(L, 1, 1, errFunc);
+                
+                
+                System.Threading.Tasks.Task __gen_ret = (System.Threading.Tasks.Task)translator.GetObject(L, errFunc + 1, typeof(System.Threading.Tasks.Task));
+                LuaAPI.lua_settop(L, errFunc - 1);
+                return  __gen_ret;
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
+		public System.Threading.Tasks.Task<int> __Gen_Delegate_Imp31(object p0)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int errFunc = LuaAPI.pcall_prepare(L, errorFuncRef, luaReference);
+                ObjectTranslator translator = luaEnv.translator;
+                translator.PushAny(L, p0);
+                
+                PCall(L, 1, 1, errFunc);
+                
+                
+                System.Threading.Tasks.Task<int> __gen_ret = (System.Threading.Tasks.Task<int>)translator.GetObject(L, errFunc + 1, typeof(System.Threading.Tasks.Task<int>));
+                LuaAPI.lua_settop(L, errFunc - 1);
+                return  __gen_ret;
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
         
 		static DelegateBridge()
 		{

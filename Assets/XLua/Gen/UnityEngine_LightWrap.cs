@@ -106,9 +106,8 @@ namespace XLua.CSObjectWrap
 			Utils.EndObjectRegister(type, L, translator, null, null,
 			    null, null, null);
 
-		    Utils.BeginClassRegister(type, L, __CreateInstance, 2, 0, 0);
-			Utils.RegisterFunc(L, Utils.CLS_IDX, "GetLights", _m_GetLights_xlua_st_);
-            
+		    Utils.BeginClassRegister(type, L, __CreateInstance, 1, 0, 0);
+			
 			
             
 			
@@ -393,34 +392,6 @@ namespace XLua.CSObjectWrap
                     UnityEngine.Rendering.LightEvent _evt;translator.Get(L, 2, out _evt);
                     
                         var gen_ret = gen_to_be_invoked.GetCommandBuffers( _evt );
-                        translator.Push(L, gen_ret);
-                    
-                    
-                    
-                    return 1;
-                }
-                
-            } catch(System.Exception gen_e) {
-                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
-            }
-            
-        }
-        
-        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _m_GetLights_xlua_st_(RealStatePtr L)
-        {
-		    try {
-            
-                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
-            
-            
-            
-                
-                {
-                    UnityEngine.LightType _type;translator.Get(L, 1, out _type);
-                    int _layer = LuaAPI.xlua_tointeger(L, 2);
-                    
-                        var gen_ret = UnityEngine.Light.GetLights( _type, _layer );
                         translator.Push(L, gen_ret);
                     
                     

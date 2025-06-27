@@ -21,7 +21,7 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(UnityEngine.MonoBehaviour);
-			Utils.BeginObjectRegister(type, L, translator, 0, 7, 1, 1);
+			Utils.BeginObjectRegister(type, L, translator, 0, 7, 2, 1);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "IsInvoking", _m_IsInvoking);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "CancelInvoke", _m_CancelInvoke);
@@ -32,7 +32,8 @@ namespace XLua.CSObjectWrap
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "StopAllCoroutines", _m_StopAllCoroutines);
 			
 			
-			Utils.RegisterFunc(L, Utils.GETTER_IDX, "useGUILayout", _g_get_useGUILayout);
+			Utils.RegisterFunc(L, Utils.GETTER_IDX, "destroyCancellationToken", _g_get_destroyCancellationToken);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "useGUILayout", _g_get_useGUILayout);
             
 			Utils.RegisterFunc(L, Utils.SETTER_IDX, "useGUILayout", _s_set_useGUILayout);
             
@@ -387,6 +388,20 @@ namespace XLua.CSObjectWrap
         
         
         
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_destroyCancellationToken(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                UnityEngine.MonoBehaviour gen_to_be_invoked = (UnityEngine.MonoBehaviour)translator.FastGetCSObj(L, 1);
+                translator.Push(L, gen_to_be_invoked.destroyCancellationToken);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _g_get_useGUILayout(RealStatePtr L)

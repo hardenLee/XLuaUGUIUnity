@@ -31,7 +31,7 @@ namespace XLua.CSObjectWrap
 			Utils.EndObjectRegister(type, L, translator, null, null,
 			    null, null, null);
 
-		    Utils.BeginClassRegister(type, L, __CreateInstance, 54, 0, 0);
+		    Utils.BeginClassRegister(type, L, __CreateInstance, 55, 0, 0);
 			Utils.RegisterFunc(L, Utils.CLS_IDX, "ClosestPowerOfTwo", _m_ClosestPowerOfTwo_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "IsPowerOfTwo", _m_IsPowerOfTwo_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "NextPowerOfTwo", _m_NextPowerOfTwo_xlua_st_);
@@ -41,6 +41,7 @@ namespace XLua.CSObjectWrap
             Utils.RegisterFunc(L, Utils.CLS_IDX, "FloatToHalf", _m_FloatToHalf_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "HalfToFloat", _m_HalfToFloat_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "PerlinNoise", _m_PerlinNoise_xlua_st_);
+            Utils.RegisterFunc(L, Utils.CLS_IDX, "PerlinNoise1D", _m_PerlinNoise1D_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "Sin", _m_Sin_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "Cos", _m_Cos_xlua_st_);
             Utils.RegisterFunc(L, Utils.CLS_IDX, "Tan", _m_Tan_xlua_st_);
@@ -337,6 +338,31 @@ namespace XLua.CSObjectWrap
                     float _y = (float)LuaAPI.lua_tonumber(L, 2);
                     
                         var gen_ret = UnityEngine.Mathf.PerlinNoise( _x, _y );
+                        LuaAPI.lua_pushnumber(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_PerlinNoise1D_xlua_st_(RealStatePtr L)
+        {
+		    try {
+            
+            
+            
+                
+                {
+                    float _x = (float)LuaAPI.lua_tonumber(L, 1);
+                    
+                        var gen_ret = UnityEngine.Mathf.PerlinNoise1D( _x );
                         LuaAPI.lua_pushnumber(L, gen_ret);
                     
                     

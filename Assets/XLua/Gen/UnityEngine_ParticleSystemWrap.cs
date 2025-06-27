@@ -21,7 +21,7 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(UnityEngine.ParticleSystem);
-			Utils.BeginObjectRegister(type, L, translator, 0, 19, 32, 3);
+			Utils.BeginObjectRegister(type, L, translator, 0, 19, 35, 3);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "SetParticles", _m_SetParticles);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetParticles", _m_GetParticles);
@@ -50,9 +50,12 @@ namespace XLua.CSObjectWrap
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "isPaused", _g_get_isPaused);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "particleCount", _g_get_particleCount);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "time", _g_get_time);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "totalTime", _g_get_totalTime);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "randomSeed", _g_get_randomSeed);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "useAutoRandomSeed", _g_get_useAutoRandomSeed);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "proceduralSimulationSupported", _g_get_proceduralSimulationSupported);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "has3DParticleRotations", _g_get_has3DParticleRotations);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "hasNonUniformParticleSizes", _g_get_hasNonUniformParticleSizes);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "main", _g_get_main);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "emission", _g_get_emission);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "shape", _g_get_shape);
@@ -1102,6 +1105,20 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_totalTime(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                UnityEngine.ParticleSystem gen_to_be_invoked = (UnityEngine.ParticleSystem)translator.FastGetCSObj(L, 1);
+                LuaAPI.lua_pushnumber(L, gen_to_be_invoked.totalTime);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _g_get_randomSeed(RealStatePtr L)
         {
 		    try {
@@ -1137,6 +1154,34 @@ namespace XLua.CSObjectWrap
 			
                 UnityEngine.ParticleSystem gen_to_be_invoked = (UnityEngine.ParticleSystem)translator.FastGetCSObj(L, 1);
                 LuaAPI.lua_pushboolean(L, gen_to_be_invoked.proceduralSimulationSupported);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_has3DParticleRotations(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                UnityEngine.ParticleSystem gen_to_be_invoked = (UnityEngine.ParticleSystem)translator.FastGetCSObj(L, 1);
+                LuaAPI.lua_pushboolean(L, gen_to_be_invoked.has3DParticleRotations);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_hasNonUniformParticleSizes(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                UnityEngine.ParticleSystem gen_to_be_invoked = (UnityEngine.ParticleSystem)translator.FastGetCSObj(L, 1);
+                LuaAPI.lua_pushboolean(L, gen_to_be_invoked.hasNonUniformParticleSizes);
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
             }
