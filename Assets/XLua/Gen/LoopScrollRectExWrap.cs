@@ -28,13 +28,13 @@ namespace XLua.CSObjectWrap
 			
 			Utils.RegisterFunc(L, Utils.GETTER_IDX, "itemPrefab", _g_get_itemPrefab);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "content", _g_get_content);
-            Utils.RegisterFunc(L, Utils.GETTER_IDX, "spacing", _g_get_spacing);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "scrollRect", _g_get_scrollRect);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "spacing", _g_get_spacing);
             
 			Utils.RegisterFunc(L, Utils.SETTER_IDX, "itemPrefab", _s_set_itemPrefab);
             Utils.RegisterFunc(L, Utils.SETTER_IDX, "content", _s_set_content);
-            Utils.RegisterFunc(L, Utils.SETTER_IDX, "spacing", _s_set_spacing);
             Utils.RegisterFunc(L, Utils.SETTER_IDX, "scrollRect", _s_set_scrollRect);
+            Utils.RegisterFunc(L, Utils.SETTER_IDX, "spacing", _s_set_spacing);
             
 			
 			Utils.EndObjectRegister(type, L, translator, null, null,
@@ -141,20 +141,6 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _g_get_spacing(RealStatePtr L)
-        {
-		    try {
-                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
-			
-                LoopScrollRectEx gen_to_be_invoked = (LoopScrollRectEx)translator.FastGetCSObj(L, 1);
-                LuaAPI.xlua_pushinteger(L, gen_to_be_invoked.spacing);
-            } catch(System.Exception gen_e) {
-                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
-            }
-            return 1;
-        }
-        
-        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _g_get_scrollRect(RealStatePtr L)
         {
 		    try {
@@ -162,6 +148,20 @@ namespace XLua.CSObjectWrap
 			
                 LoopScrollRectEx gen_to_be_invoked = (LoopScrollRectEx)translator.FastGetCSObj(L, 1);
                 translator.Push(L, gen_to_be_invoked.scrollRect);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_spacing(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                LoopScrollRectEx gen_to_be_invoked = (LoopScrollRectEx)translator.FastGetCSObj(L, 1);
+                LuaAPI.xlua_pushinteger(L, gen_to_be_invoked.spacing);
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
             }
@@ -201,13 +201,13 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _s_set_spacing(RealStatePtr L)
+        static int _s_set_scrollRect(RealStatePtr L)
         {
 		    try {
                 ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			
                 LoopScrollRectEx gen_to_be_invoked = (LoopScrollRectEx)translator.FastGetCSObj(L, 1);
-                gen_to_be_invoked.spacing = LuaAPI.xlua_tointeger(L, 2);
+                gen_to_be_invoked.scrollRect = (UnityEngine.UI.ScrollRect)translator.GetObject(L, 2, typeof(UnityEngine.UI.ScrollRect));
             
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
@@ -216,13 +216,13 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _s_set_scrollRect(RealStatePtr L)
+        static int _s_set_spacing(RealStatePtr L)
         {
 		    try {
                 ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			
                 LoopScrollRectEx gen_to_be_invoked = (LoopScrollRectEx)translator.FastGetCSObj(L, 1);
-                gen_to_be_invoked.scrollRect = (UnityEngine.UI.ScrollRect)translator.GetObject(L, 2, typeof(UnityEngine.UI.ScrollRect));
+                gen_to_be_invoked.spacing = LuaAPI.xlua_tointeger(L, 2);
             
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);

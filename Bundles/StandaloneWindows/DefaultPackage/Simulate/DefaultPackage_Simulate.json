@@ -1,0 +1,34 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": false,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 1,
+    "BuildPipeline": "EditorSimulateBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "Simulate",
+    "PackageNote": "2025/6/30 16:19:33",
+    "AssetList": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Prefabs/UI/UITest.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_prefabs_ui.bundle",
+            "UnityCRC": 0,
+            "FileHash": "e9a25430c72c27687de8f51016f22411",
+            "FileCRC": "00000000",
+            "FileSize": 29067,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}
