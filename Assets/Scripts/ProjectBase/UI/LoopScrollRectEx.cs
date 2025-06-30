@@ -13,7 +13,12 @@ public class LoopScrollRectEx : MonoBehaviour
     public GameObject itemPrefab;
 
     // 🔹 ScrollView 中的 Content（动态调整 size + 控制 item 挂载位置）
+    [HideInInspector]
     public RectTransform content;
+
+    // 🔹 滚动组件（用于监听滚动事件）
+    [HideInInspector]
+    public ScrollRect scrollRect;
 
     // 🔹 每个 item 间距
     public int spacing = 10;
@@ -30,11 +35,12 @@ public class LoopScrollRectEx : MonoBehaviour
     // 🔹 对象池：循环使用 item 实例，避免反复 Instantiate/Destroy
     private List<GameObject> itemPool = new List<GameObject>();
 
-    // 🔹 滚动组件（用于监听滚动事件）
-    public ScrollRect scrollRect;
-
     void Awake()
     {
+        scrollRect = transform.Find("Scroll View").GetComponent<ScrollRect>();
+        content = scrollRect.content;
+
+
         // 🔸 绑定滚动监听事件
         scrollRect.onValueChanged.AddListener(OnScroll);
 

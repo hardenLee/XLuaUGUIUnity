@@ -29,17 +29,18 @@ function UITest:InitUI()
 
     -- 获取 LoopScrollRectEx 组件（挂载在 Scroll View 节点上）
     self.scrollList = self.panelObj.transform:Find("LoopScrollRectEx"):GetComponent(typeof(CS.LoopScrollRectEx))
+
+    -- -- 初始化滚动列表
+    -- self.scrollList.itemPrefab = self.panelObj.transform:Find("LoopScrollRectEx/Scroll View/Viewport/Content/Item")
+    --     .gameObject
 end
 
 function UITest:InitScrollList()
+    --初始化测试数据
     self.testData = {}
     for i = 1, 100 do
         table.insert(self.testData, "lyk " .. i)
     end
-
-    -- 初始化滚动列表
-    self.scrollList.itemPrefab = self.panelObj.transform:Find("LoopScrollRectEx/Scroll View/Viewport/Content/Item")
-        .gameObject
 
     self.scrollList:Init(self.GetItemData, self.OnItemUpdate)
 end
@@ -60,6 +61,9 @@ end
 
 function UITest:OnBtnRoleClick()
     print("lyk BtnRole clicked")
+    local isActive = self.scrollList.gameObject.activeSelf
+    self.scrollList.gameObject:SetActive(not isActive)
+
     -- 这里可以添加按钮点击后的逻辑
 end
 
