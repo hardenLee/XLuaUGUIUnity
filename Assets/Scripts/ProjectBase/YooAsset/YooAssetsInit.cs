@@ -7,7 +7,7 @@ public enum OperatingMode
 {
     EditorSimulateMode,     // 编辑器模拟模式
     OfflinePlayMode,        // 离线播放模式
-    HostPlayMode,           // 主机播放模式
+    HostPlayMode,           // 联机运行模式
     WebPlayMode             // Web运行模式
 }
 
