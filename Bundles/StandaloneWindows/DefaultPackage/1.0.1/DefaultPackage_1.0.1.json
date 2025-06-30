@@ -1,0 +1,87 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": false,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 2,
+    "BuildPipeline": "ScriptableBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "1.0.1",
+    "PackageNote": "2025/6/30 17:02:22",
+    "AssetList": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Prefabs/UI/UITest.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_prefabs_ui.bundle",
+            "UnityCRC": 988181754,
+            "FileHash": "8c3d0a857878023da0f3d550561fd624",
+            "FileCRC": "ed448ccd",
+            "FileSize": 13145,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "BundleName": "share_assets_resources_image_ui_icon.bundle",
+            "UnityCRC": 1998692796,
+            "FileHash": "8b5ea653f3ee499104c238687e4f3b88",
+            "FileCRC": "8fb71be9",
+            "FileSize": 12356,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_fonts.bundle",
+            "UnityCRC": 819259615,
+            "FileHash": "1fe7ad702da348236d70e1e5c895e587",
+            "FileCRC": "e6e3c215",
+            "FileSize": 227271,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+            "UnityCRC": 1607857606,
+            "FileHash": "eb49b40ff2c9fa6f07a769eea046c0b3",
+            "FileCRC": "f6a5aa5f",
+            "FileSize": 373480,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                2,
+                4
+            ]
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "UnityCRC": 3076654232,
+            "FileHash": "ee6e1a6d61892f23d5d2144bcfcdcc0a",
+            "FileCRC": "aaf49700",
+            "FileSize": 20317,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}

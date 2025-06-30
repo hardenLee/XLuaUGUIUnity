@@ -6,6 +6,8 @@ using UnityEngine;
 public class AppStart : MonoBehaviour
 {
     private YooAssetsInit yooAssetsInit;
+    public OperatingMode operatingMode = OperatingMode.EditorSimulateMode;
+    
     private bool luaReady = false;
     
     private void Awake()
@@ -16,7 +18,7 @@ public class AppStart : MonoBehaviour
 
     private IEnumerator Start()
     {
-        yield return yooAssetsInit.InitializeAndUpdate();
+        yield return yooAssetsInit.InitializeAndUpdate(operatingMode);
         
         LuaManager.Instance().Init();
         LuaManager.Instance().DoLuaFile("Main");
