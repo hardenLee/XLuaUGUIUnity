@@ -22,6 +22,7 @@
 		<type fullname="XLuaTest.FooExtension" preserve="all"/>
 		<type fullname="Tutorial.DerivedClass+TestEnumInner" preserve="all"/>
 		<type fullname="LoopScrollRectEx" preserve="all"/>
+		<type fullname="ABManager" preserve="all"/>
 		
 	</assembly>
 

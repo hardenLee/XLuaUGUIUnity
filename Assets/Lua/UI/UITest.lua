@@ -3,36 +3,39 @@ local UITest = {}
 UITest.panelObj = nil -- 关联的面板对象
 UITest.btnRole = nil
 UITest.btnCharacter = nil
+UITest.btnClose = nil
 
 UITest.scrollList = nil -- LoopScrollRectEx 组件引用
 UITest.testData = {}    -- 测试数据
 
 function UITest:Show()
-    self:InstantiateUI()  -- 实例化面板
     self:InitUI()         -- 初始化面板控件
-
     self:InitScrollList() -- 初始化滚动列表
 end
 
-function UITest:InstantiateUI()
-    print("lyk InstantiateUI called")
-    self.panelObj = ABManager:ResourcesLoad("Prefabs/UI/UITest", typeof(GameObject)) -- 这里的`self.`代指“调用者”(谁调用这个方法，self就代表谁)
-    self.panelObj.transform:SetParent(CanvasLow, false)
+function UITest:Hide()
+    --关闭界面 卸载事件相关操作
+    print("lyk Destory UITest")
 end
 
 function UITest:InitUI()
+    if not self.panelObj then
+        error("UITest.panelObj is nil! Did UIManager forget to instantiate it?")
+        return
+    end
+
     self.btnRole = self.panelObj.transform:Find("btnRole"):GetComponent(typeof(Button))
     self.btnCharacter = self.panelObj.transform:Find("btnCharacter"):GetComponent(typeof(Button))
-    -- 为按钮添加点击事件监听
+    self.btnClose = self.panelObj.transform:Find("btnClose"):GetComponent(typeof(Button))
+
+
     self.btnRole.onClick:AddListener(function() self:OnBtnRoleClick() end)
     self.btnCharacter.onClick:AddListener(function() self:OnBtnCharacterClick() end)
+    self.btnClose.onClick:AddListener(function() self:OnCloseClick() end)
 
-    -- 获取 LoopScrollRectEx 组件（挂载在 Scroll View 节点上）
     self.scrollList = self.panelObj.transform:Find("LoopScrollRectEx"):GetComponent(typeof(CS.LoopScrollRectEx))
-
-    -- -- 初始化滚动列表
-    -- self.scrollList.itemPrefab = self.panelObj.transform:Find("LoopScrollRectEx/Scroll View/Viewport/Content/Item")
-    --     .gameObject
+    self.scrollList.itemPrefab = self.panelObj.transform:Find("LoopScrollRectEx/Scroll View/Viewport/Content/Item")
+        .gameObject
 end
 
 function UITest:InitScrollList()
@@ -55,10 +58,6 @@ function UITest.OnItemUpdate(go, index, data)
     text.text = data
 end
 
-function UITest:Hide()
-    UIManager.HidePanel("UITest") -- 调用UIManager隐藏面板
-end
-
 function UITest:OnBtnRoleClick()
     print("lyk BtnRole clicked")
     local isActive = self.scrollList.gameObject.activeSelf
@@ -70,6 +69,11 @@ end
 function UITest:OnBtnCharacterClick()
     print("lyk BtnCharacter clicked")
     -- 这里可以添加按钮点击后的逻辑
+end
+
+function UITest:OnCloseClick()
+    print("lyk BtnClose clicked")
+    UIManager:HidePanel("UITest") -- 调用UIManager隐藏面板
 end
 
 return UITest

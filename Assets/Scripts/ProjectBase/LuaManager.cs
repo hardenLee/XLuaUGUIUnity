@@ -50,17 +50,17 @@ public class LuaManager : BaseManager<LuaManager>
         return null;
     }
 
-    // //再写一个Load 用于从AB包加载Lua文件
-    // private byte[] MyCustomLoaderFormAB(ref string filepath)
-    // {
-    //     //改为我们的AB包管理器加载
-    //     TextAsset file2 = ABManager.Instance().LoadRes<TextAsset>("lua", filepath + ".lua");
-    //     if (file2 != null)
-    //         return file2.bytes;
-    //     else
-    //         Debug.Log("MyCustomLoaderFormAB重定向失败");
-    //     return null;
-    // }
+    // // //再写一个Load 用于从AB包加载Lua文件
+    // // private byte[] MyCustomLoaderFormAB(ref string filepath)
+    // // {
+    // //     //改为我们的AB包管理器加载
+    // //     TextAsset file2 = ABManager.Instance().LoadRes<TextAsset>("lua", filepath + ".lua");
+    // //     if (file2 != null)
+    // //         return file2.bytes;
+    // //     else
+    // //         Debug.Log("MyCustomLoaderFormAB重定向失败");
+    // //     return null;
+    // // }
 
     /// <summary>
     /// 执行lua文件

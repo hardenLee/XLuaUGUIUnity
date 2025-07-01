@@ -20,6 +20,8 @@ public class YooAssetsInit
 {
     private ResourcePackage package;
     
+    private string packageName = "DefaultPackage";
+    
     /// <summary> 当前操作模式 </summary>
     private OperatingMode operatingMode;
     
@@ -40,7 +42,7 @@ public class YooAssetsInit
 
         YooAssets.Initialize();
 
-        package = YooAssets.CreatePackage("DefaultPackage");
+        package = YooAssets.CreatePackage(packageName);
 
         YooAssets.SetDefaultPackage(package);
 
@@ -73,7 +75,7 @@ public class YooAssetsInit
         {
             case OperatingMode.EditorSimulateMode:
             {
-                var buildResult = EditorSimulateModeHelper.SimulateBuild("DefaultPackage");
+                var buildResult = EditorSimulateModeHelper.SimulateBuild(packageName);
                 var packageRoot = buildResult.PackageRootDirectory;
                 var editorFileSystemParams = FileSystemParameters.CreateDefaultEditorFileSystemParameters(packageRoot);
                 var initParameters = new EditorSimulateModeParameters();
@@ -123,7 +125,7 @@ public class YooAssetsInit
     /// <summary> 执行资源版本和清单更新，并下载缺失资源 </summary>
     private IEnumerator UpdatePackageVersionAndManifest()
     {
-        var package = YooAssets.GetPackage("DefaultPackage");
+        var package = YooAssets.GetPackage(packageName);
 
         // ① 获取资源版本号（通常是远端服务器上的版本）
         var versionOperation = package.RequestPackageVersionAsync();
@@ -154,7 +156,7 @@ public class YooAssetsInit
     /// <summary> 下载缺失或待更新的资源包内容 </summary>
     private IEnumerator UpdatePackage()
     {
-        var package = YooAssets.GetPackage("DefaultPackage");
+        var package = YooAssets.GetPackage(packageName);
 
         // ③ 创建资源下载器（全量或按需）
         int downloadingMaxNum = 10;

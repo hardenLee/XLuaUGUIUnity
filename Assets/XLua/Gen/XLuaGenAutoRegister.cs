@@ -166,6 +166,9 @@ namespace XLua.CSObjectWrap
             translator.DelayWrapLoader(typeof(LoopScrollRectEx), LoopScrollRectExWrap.__Register);
         
         
+            translator.DelayWrapLoader(typeof(ABManager), ABManagerWrap.__Register);
+        
+        
         
         }
         

@@ -65,14 +65,14 @@ public class LoopScrollRectEx : MonoBehaviour
             totalCount++;
         }
 
-        InitPool();         // 初始化对象池
+        InitLoopPool();         // 初始化对象池
         RefreshVisible();   // 初始化可视区域 item 显示
     }
 
     /// <summary>
     /// 初始化对象池，根据视图区域的高度动态创建一定数量的 item 复用
     /// </summary>
-    void InitPool()
+    void InitLoopPool()
     {
         float itemHeight = GetItemHeight(itemPrefab);
 

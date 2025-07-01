@@ -1,0 +1,114 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": false,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 2,
+    "BuildPipeline": "ScriptableBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2025-07-01-883",
+    "PackageNote": "2025/7/1 14:44:02",
+    "AssetList": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/UIMain.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 0,
+            "DependBundleIDs": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/UITest.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 0,
+            "DependBundleIDs": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_bundles_ui.bundle",
+            "UnityCRC": 3086326915,
+            "FileHash": "4f89819b5d834854b8f52959b9201fc0",
+            "FileCRC": "407e33c6",
+            "FileSize": 14120,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "BundleName": "share_assets_resources_image_ui_icon.bundle",
+            "UnityCRC": 1626373271,
+            "FileHash": "72561de79f27558cf62a805a04e1e2cc",
+            "FileCRC": "fd67463b",
+            "FileSize": 18766,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_fonts.bundle",
+            "UnityCRC": 819259615,
+            "FileHash": "1fe7ad702da348236d70e1e5c895e587",
+            "FileCRC": "e6e3c215",
+            "FileSize": 227271,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+            "UnityCRC": 1607857606,
+            "FileHash": "eb49b40ff2c9fa6f07a769eea046c0b3",
+            "FileCRC": "f6a5aa5f",
+            "FileSize": 373480,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": [
+                2,
+                4
+            ]
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "UnityCRC": 3076654232,
+            "FileHash": "ee6e1a6d61892f23d5d2144bcfcdcc0a",
+            "FileCRC": "aaf49700",
+            "FileSize": 20317,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        }
+    ]
+}

@@ -50,3 +50,6 @@ CanvasHigh = GameObject.Find("High").transform
 
 -- 4.管理器类
 UIManager = require("Manager/UIManager") -- UI管理器
+
+--5.LuaUpdate类
+LuaUpdate = require("Core/LuaUpdate")

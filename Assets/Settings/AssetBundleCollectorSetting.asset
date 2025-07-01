@@ -26,10 +26,10 @@ MonoBehaviour:
     Groups:
     - GroupName: UI
       GroupDesc: 
-      AssetTags: 
+      AssetTags: Home
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Prefabs/UI
+      - CollectPath: Assets/Bundles/UI
         CollectorGUID: 7ae7f55545ae8eb43bb755f2fdb2f47d
         CollectorType: 0
         AddressRuleName: AddressByFileName

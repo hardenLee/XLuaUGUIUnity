@@ -1,0 +1,263 @@
+{
+    "Summary": {
+        "YooVersion": "2.3.11",
+        "UnityVersion": "2022.3.34f1c1",
+        "BuildDate": "2025/7/1 14:44:03",
+        "BuildSeconds": 1,
+        "BuildTarget": 5,
+        "BuildPipeline": "ScriptableBuildPipeline",
+        "BuildBundleType": 2,
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "2025-07-01-883",
+        "BuildPackageNote": "2025/7/1 14:44:02",
+        "UniqueBundleName": false,
+        "EnableAddressable": false,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "ClearBuildCacheFiles": true,
+        "UseAssetDependencyDB": false,
+        "EnableSharePackRule": true,
+        "SingleReferencedPackAlone": true,
+        "EncryptionServicesClassName": "YooAsset.Editor.EncryptionNone",
+        "ManifestServicesClassName": "YooAsset.Editor.ManifestNone",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "WriteLinkXML": true,
+        "CacheServerHost": "",
+        "CacheServerPort": 0,
+        "BuiltinShadersBundleName": "unityshaders.bundle",
+        "MonoScriptsBundleName": "",
+        "AssetFileTotalCount": 9,
+        "MainAssetTotalCount": 2,
+        "AllBundleTotalCount": 5,
+        "AllBundleTotalSize": 653954,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/UIMain.prefab",
+            "AssetGUID": "fd42a621110385e4cbcb9c0f04953718",
+            "AssetTags": [
+                "Home"
+            ],
+            "MainBundleName": "assets_bundles_ui.bundle",
+            "MainBundleSize": 14120,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/菜单武器1.png",
+                    "AssetGUID": "1ec5fbb759b1f3b42a087700e8d74fd4"
+                },
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/菜单食物1.png",
+                    "AssetGUID": "26a5fadfc99577546b618102bcacdd9b"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+                    "AssetGUID": "e3265ab4bf004d28a9537516768c1c75"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                    "AssetGUID": "2e498d1c8094910479dc3e1b768306a4"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                    "AssetGUID": "8f586378b4e144a9851e7b34d9b748ee"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                    "AssetGUID": "fe393ace9b354375a9cb14cdbbc28be4"
+                }
+            ],
+            "DependBundles": [
+                "share_assets_resources_image_ui_icon.bundle",
+                "share_assets_textmesh_pro_fonts.bundle",
+                "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/UITest.prefab",
+            "AssetGUID": "342f8fd96669c6b4db150d4da9beb614",
+            "AssetTags": [
+                "Home"
+            ],
+            "MainBundleName": "assets_bundles_ui.bundle",
+            "MainBundleSize": 14120,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/菜单武器1.png",
+                    "AssetGUID": "1ec5fbb759b1f3b42a087700e8d74fd4"
+                },
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/菜单食物1.png",
+                    "AssetGUID": "26a5fadfc99577546b618102bcacdd9b"
+                },
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/退出.png",
+                    "AssetGUID": "d5634a3a7542cbd4f9cb46f4a0e401bb"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+                    "AssetGUID": "e3265ab4bf004d28a9537516768c1c75"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                    "AssetGUID": "2e498d1c8094910479dc3e1b768306a4"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                    "AssetGUID": "8f586378b4e144a9851e7b34d9b748ee"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                    "AssetGUID": "fe393ace9b354375a9cb14cdbbc28be4"
+                }
+            ],
+            "DependBundles": [
+                "share_assets_resources_image_ui_icon.bundle",
+                "share_assets_textmesh_pro_fonts.bundle",
+                "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+                "unityshaders.bundle"
+            ]
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "assets_bundles_ui.bundle",
+            "FileName": "4f89819b5d834854b8f52959b9201fc0.bundle",
+            "FileHash": "4f89819b5d834854b8f52959b9201fc0",
+            "FileCRC": "407e33c6",
+            "FileSize": 14120,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundles": [
+                "share_assets_resources_image_ui_icon.bundle",
+                "share_assets_textmesh_pro_fonts.bundle",
+                "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Bundles/UI/UIMain.prefab",
+                    "AssetGUID": "fd42a621110385e4cbcb9c0f04953718"
+                },
+                {
+                    "AssetPath": "Assets/Bundles/UI/UITest.prefab",
+                    "AssetGUID": "342f8fd96669c6b4db150d4da9beb614"
+                }
+            ]
+        },
+        {
+            "BundleName": "share_assets_resources_image_ui_icon.bundle",
+            "FileName": "72561de79f27558cf62a805a04e1e2cc.bundle",
+            "FileHash": "72561de79f27558cf62a805a04e1e2cc",
+            "FileCRC": "fd67463b",
+            "FileSize": 18766,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_bundles_ui.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/菜单武器1.png",
+                    "AssetGUID": "1ec5fbb759b1f3b42a087700e8d74fd4"
+                },
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/菜单食物1.png",
+                    "AssetGUID": "26a5fadfc99577546b618102bcacdd9b"
+                },
+                {
+                    "AssetPath": "Assets/Resources/Image/UI/Icon/退出.png",
+                    "AssetGUID": "d5634a3a7542cbd4f9cb46f4a0e401bb"
+                }
+            ]
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_fonts.bundle",
+            "FileName": "1fe7ad702da348236d70e1e5c895e587.bundle",
+            "FileHash": "1fe7ad702da348236d70e1e5c895e587",
+            "FileCRC": "e6e3c215",
+            "FileSize": 227271,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_bundles_ui.bundle",
+                "share_assets_textmesh_pro_resources_fonts_&_materials.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+                    "AssetGUID": "e3265ab4bf004d28a9537516768c1c75"
+                }
+            ]
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+            "FileName": "eb49b40ff2c9fa6f07a769eea046c0b3.bundle",
+            "FileHash": "eb49b40ff2c9fa6f07a769eea046c0b3",
+            "FileCRC": "f6a5aa5f",
+            "FileSize": 373480,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundles": [
+                "share_assets_textmesh_pro_fonts.bundle",
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [
+                "assets_bundles_ui.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                    "AssetGUID": "2e498d1c8094910479dc3e1b768306a4"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                    "AssetGUID": "8f586378b4e144a9851e7b34d9b748ee"
+                }
+            ]
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "FileName": "ee6e1a6d61892f23d5d2144bcfcdcc0a.bundle",
+            "FileHash": "ee6e1a6d61892f23d5d2144bcfcdcc0a",
+            "FileCRC": "aaf49700",
+            "FileSize": 20317,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_bundles_ui.bundle",
+                "share_assets_textmesh_pro_resources_fonts_&_materials.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                    "AssetGUID": "fe393ace9b354375a9cb14cdbbc28be4"
+                }
+            ]
+        }
+    ],
+    "IndependAssets": []
+}
