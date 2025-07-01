@@ -1,36 +1,36 @@
-﻿2025-07-01 14:44:02.064 [INFO] Begin to build package : DefaultPackage by ScriptableBuildPipeline
-2025-07-01 14:44:02.064 [INFO] --------------------------------------------->TaskPrepare<--------------------------------------------
-2025-07-01 14:44:02.097 [INFO] Delete package root directory: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage
-2025-07-01 14:44:02.098 [INFO] Create pipeline output directory: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/OutputCache
-2025-07-01 14:44:02.098 [INFO] TaskPrepare It takes 0 seconds in total
-2025-07-01 14:44:02.098 [INFO] --------------------------------------------->TaskGetBuildMap<--------------------------------------------
-2025-07-01 14:44:02.614 [INFO] TaskGetBuildMap It takes 0 seconds in total
-2025-07-01 14:44:02.614 [INFO] --------------------------------------------->TaskBuilding<--------------------------------------------
-2025-07-01 14:44:03.711 [INFO] UnityEngine build success!
-2025-07-01 14:44:03.712 [INFO] TaskBuilding It takes 1 seconds in total
-2025-07-01 14:44:03.712 [INFO] --------------------------------------------->TaskVerifyBuildResult<--------------------------------------------
-2025-07-01 14:44:03.713 [INFO] Build results verify success!
-2025-07-01 14:44:03.713 [INFO] TaskVerifyBuildResult It takes 0 seconds in total
-2025-07-01 14:44:03.713 [INFO] --------------------------------------------->TaskEncryption<--------------------------------------------
-2025-07-01 14:44:03.713 [INFO] TaskEncryption It takes 0 seconds in total
-2025-07-01 14:44:03.713 [INFO] --------------------------------------------->TaskUpdateBundleInfo<--------------------------------------------
-2025-07-01 14:44:03.729 [INFO] TaskUpdateBundleInfo It takes 0 seconds in total
-2025-07-01 14:44:03.729 [INFO] --------------------------------------------->TaskCreateManifest<--------------------------------------------
-2025-07-01 14:44:03.734 [INFO] Create package manifest file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/2025-07-01-883/DefaultPackage_2025-07-01-883.json
-2025-07-01 14:44:03.749 [INFO] Create package manifest file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/2025-07-01-883/DefaultPackage_2025-07-01-883.bytes
-2025-07-01 14:44:03.750 [INFO] Create package manifest hash file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/2025-07-01-883/DefaultPackage_2025-07-01-883.hash
-2025-07-01 14:44:03.750 [INFO] Create package manifest version file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/2025-07-01-883/DefaultPackage.version
-2025-07-01 14:44:03.751 [INFO] TaskCreateManifest It takes 0 seconds in total
-2025-07-01 14:44:03.751 [INFO] --------------------------------------------->TaskCreateReport<--------------------------------------------
-2025-07-01 14:44:03.756 [INFO] Create build report file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/2025-07-01-883/DefaultPackage_2025-07-01-883.report
-2025-07-01 14:44:03.756 [INFO] TaskCreateReport It takes 0 seconds in total
-2025-07-01 14:44:03.756 [INFO] --------------------------------------------->TaskCreatePackage<--------------------------------------------
-2025-07-01 14:44:03.756 [INFO] Start making patch package: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/2025-07-01-883
-2025-07-01 14:44:03.761 [INFO] TaskCreatePackage It takes 0 seconds in total
-2025-07-01 14:44:03.762 [INFO] --------------------------------------------->TaskCopyBuildinFiles<--------------------------------------------
-2025-07-01 14:44:03.891 [INFO] Buildin files copy complete: C:/Project/LuaProject/XLuaUGUIUnity/Assets/StreamingAssets/yoo/DefaultPackage
-2025-07-01 14:44:03.891 [INFO] TaskCopyBuildinFiles It takes 0 seconds in total
-2025-07-01 14:44:03.891 [INFO] --------------------------------------------->TaskCreateCatalog<--------------------------------------------
-2025-07-01 14:44:03.946 [INFO] TaskCreateCatalog It takes 0 seconds in total
-2025-07-01 14:44:03.946 [INFO] Total build process time: 1 seconds
-2025-07-01 14:44:03.946 [INFO] Resource pipeline build success
+﻿2025-07-01 15:55:05.412 [INFO] Begin to build package : DefaultPackage by ScriptableBuildPipeline
+2025-07-01 15:55:05.412 [INFO] --------------------------------------------->TaskPrepare<--------------------------------------------
+2025-07-01 15:55:05.445 [INFO] Delete package root directory: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage
+2025-07-01 15:55:05.446 [INFO] Create pipeline output directory: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/OutputCache
+2025-07-01 15:55:05.446 [INFO] TaskPrepare It takes 0 seconds in total
+2025-07-01 15:55:05.446 [INFO] --------------------------------------------->TaskGetBuildMap<--------------------------------------------
+2025-07-01 15:55:06.174 [INFO] TaskGetBuildMap It takes 0 seconds in total
+2025-07-01 15:55:06.174 [INFO] --------------------------------------------->TaskBuilding<--------------------------------------------
+2025-07-01 15:55:09.367 [INFO] UnityEngine build success!
+2025-07-01 15:55:09.368 [INFO] TaskBuilding It takes 3 seconds in total
+2025-07-01 15:55:09.368 [INFO] --------------------------------------------->TaskVerifyBuildResult<--------------------------------------------
+2025-07-01 15:55:09.369 [INFO] Build results verify success!
+2025-07-01 15:55:09.369 [INFO] TaskVerifyBuildResult It takes 0 seconds in total
+2025-07-01 15:55:09.369 [INFO] --------------------------------------------->TaskEncryption<--------------------------------------------
+2025-07-01 15:55:09.370 [INFO] TaskEncryption It takes 0 seconds in total
+2025-07-01 15:55:09.370 [INFO] --------------------------------------------->TaskUpdateBundleInfo<--------------------------------------------
+2025-07-01 15:55:09.403 [INFO] TaskUpdateBundleInfo It takes 0 seconds in total
+2025-07-01 15:55:09.403 [INFO] --------------------------------------------->TaskCreateManifest<--------------------------------------------
+2025-07-01 15:55:09.409 [INFO] Create package manifest file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/1.0.0/DefaultPackage_1.0.0.json
+2025-07-01 15:55:09.424 [INFO] Create package manifest file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/1.0.0/DefaultPackage_1.0.0.bytes
+2025-07-01 15:55:09.425 [INFO] Create package manifest hash file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/1.0.0/DefaultPackage_1.0.0.hash
+2025-07-01 15:55:09.426 [INFO] Create package manifest version file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/1.0.0/DefaultPackage.version
+2025-07-01 15:55:09.427 [INFO] TaskCreateManifest It takes 0 seconds in total
+2025-07-01 15:55:09.427 [INFO] --------------------------------------------->TaskCreateReport<--------------------------------------------
+2025-07-01 15:55:09.430 [INFO] Create build report file: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/1.0.0/DefaultPackage_1.0.0.report
+2025-07-01 15:55:09.431 [INFO] TaskCreateReport It takes 0 seconds in total
+2025-07-01 15:55:09.431 [INFO] --------------------------------------------->TaskCreatePackage<--------------------------------------------
+2025-07-01 15:55:09.431 [INFO] Start making patch package: C:/Project/LuaProject/XLuaUGUIUnity/Bundles/StandaloneWindows/DefaultPackage/1.0.0
+2025-07-01 15:55:09.438 [INFO] TaskCreatePackage It takes 0 seconds in total
+2025-07-01 15:55:09.438 [INFO] --------------------------------------------->TaskCopyBuildinFiles<--------------------------------------------
+2025-07-01 15:55:09.582 [INFO] Buildin files copy complete: C:/Project/LuaProject/XLuaUGUIUnity/Assets/StreamingAssets/yoo/DefaultPackage
+2025-07-01 15:55:09.583 [INFO] TaskCopyBuildinFiles It takes 0 seconds in total
+2025-07-01 15:55:09.583 [INFO] --------------------------------------------->TaskCreateCatalog<--------------------------------------------
+2025-07-01 15:55:09.639 [INFO] TaskCreateCatalog It takes 0 seconds in total
+2025-07-01 15:55:09.639 [INFO] Total build process time: 3 seconds
+2025-07-01 15:55:09.639 [INFO] Resource pipeline build success

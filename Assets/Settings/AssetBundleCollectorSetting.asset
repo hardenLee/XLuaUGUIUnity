@@ -29,8 +29,34 @@ MonoBehaviour:
       AssetTags: Home
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Bundles/UI
+      - CollectPath: Assets/Bundles/Prefabs/UI
         CollectorGUID: 7ae7f55545ae8eb43bb755f2fdb2f47d
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectPrefab
+        AssetTags: 
+        UserData: 
+    - GroupName: Image
+      GroupDesc: 
+      AssetTags: Home
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/Image
+        CollectorGUID: 3256a4e356ed47a408d33aebd6342537
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: SpriteAltas
+      GroupDesc: 
+      AssetTags: Home
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/SpriteAltas
+        CollectorGUID: 48778527293547b4485e7c6a91cdf755
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory

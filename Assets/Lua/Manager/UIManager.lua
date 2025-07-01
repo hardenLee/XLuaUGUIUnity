@@ -18,7 +18,7 @@ function UIManager:LoadAndInstantiatePanel(panelName)
 
     -- 如果没有实例化 panelObj
     if not panel.panelObj then
-        local prefabPath = "Assets/Bundles/UI/" .. panelName .. ".prefab"
+        local prefabPath = "Assets/Bundles/Prefabs/UI/" .. panelName .. ".prefab"
         local prefab = ABManager:LoadAssetSync(prefabPath, typeof(CS.UnityEngine.GameObject))
         if not prefab then
             error("Failed to load panel prefab: " .. prefabPath)

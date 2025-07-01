@@ -18,9 +18,7 @@ public class LuaManager : BaseManager<LuaManager>
         luaEnv = new LuaEnv();
         //添加重定向委托函数
         luaEnv.AddLoader(MyCustomLoader);
-        //luaEnv.AddLoader(MyCustomLoaderFormAB);
-
-        LuaCallPhysics();
+        luaEnv.AddLoader(MyCustomLoaderFormAB);
     }
 
     //Lua总表
@@ -50,17 +48,20 @@ public class LuaManager : BaseManager<LuaManager>
         return null;
     }
 
-    // // //再写一个Load 用于从AB包加载Lua文件
-    // // private byte[] MyCustomLoaderFormAB(ref string filepath)
-    // // {
-    // //     //改为我们的AB包管理器加载
-    // //     TextAsset file2 = ABManager.Instance().LoadRes<TextAsset>("lua", filepath + ".lua");
-    // //     if (file2 != null)
-    // //         return file2.bytes;
-    // //     else
-    // //         Debug.Log("MyCustomLoaderFormAB重定向失败");
-    // //     return null;
-    // // }
+    //再写一个Load 用于从AB包加载Lua文件
+    private byte[] MyCustomLoaderFormAB(ref string filepath)
+    {
+        var obj = ABManager.Instance().LoadAssetSync("lua/" + filepath, typeof(TextAsset));
+        TextAsset luaFile = obj as TextAsset;
+
+        if (luaFile != null)
+        {
+            return luaFile.bytes;
+        }
+
+        Debug.LogError($"MyCustomLoaderFromAB failed to load: {filepath}");
+        return null;
+    }
 
     /// <summary>
     /// 执行lua文件
@@ -93,40 +94,11 @@ public class LuaManager : BaseManager<LuaManager>
     }
 
     private LuaFunction luaUpdateFunction;
-    public void CallLuaUpdateEveryFrame() ///-->【调用Update方法】<--
+    public void CallLuaUpdateEveryFrame()
     {
         // 获取Lua中的更新函数  
         luaUpdateFunction = luaEnv.Global.GetInPath<LuaFunction>("CsherpCallUpdate");
-        //if (luaUpdateFunction != null)
-        // 调用Lua更新函数（注意：这里没有传递参数，如果你的函数需要参数，请在这里传递）  
         luaUpdateFunction.Call();
-        //else
-        //    Debug.Log("luaUpdateFunction is null");
-
-
-        //// 获取 LuaUpdate 对象  
-        //LuaTable luaUpdateTable = luaEnv.Global.Get<LuaTable>("LuaUpdate");
-        //if (luaUpdateTable != null && luaUpdateTable.Get<LuaFunction>("Update") != null)
-        //{
-        //    // 调用 LuaUpdate 对象的 Update 方法  
-        //    luaUpdateTable.Get<LuaFunction>("Update").Call();
-        //    //luaUpdateTable.Get<LuaFunction>("CsherpCallUpdate").Call();
-        //}
-        //else
-        //{
-        //    Debug.Log("LuaUpdate table or Update function is null");
-        //}
     }
 
-    public void LuaCallPhysics()
-    {
-        //// 创建一个PhysicsHelper实例  
-        //LuaCallPhysics physicsHelper = new GameObject("LuaCallPhysics").AddComponent<LuaCallPhysics>();
-
-        //// 将PhysicsHelper实例绑定到Lua全局变量中  
-        //luaEnv.Global["LuaCallPhysics"] = LuaCallPhysics;
-
-        // 注册PhysicsWrapper到Lua全局环境  
-        luaEnv.Global["LuaCallPhysics"] = typeof(LuaCallPhysics);
-    }
 }
