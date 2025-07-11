@@ -18,7 +18,7 @@ MonoBehaviour:
   Packages:
   - PackageName: DefaultPackage
     PackageDesc: 
-    EnableAddressable: 1
+    EnableAddressable: 0
     LocationToLower: 0
     IncludeAssetGUID: 0
     AutoCollectShaders: 1

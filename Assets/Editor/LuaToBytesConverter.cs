@@ -24,18 +24,15 @@ public class LuaToBytesConverter : MonoBehaviour
         {
             string bytesPath = filePath + ".bytes";
 
-            if (File.Exists(bytesPath))
-            {
-                Debug.Log($"已存在：{bytesPath}，跳过");
-                continue;
-            }
+            // 直接覆盖，无需判断文件是否存在
+            File.Copy(filePath, bytesPath, true);  // 第三个参数 true 表示覆盖
 
-            File.Copy(filePath, bytesPath);
-            Debug.Log($"已转换：{filePath} → {bytesPath}");
+            Debug.Log($"已转换并覆盖：{filePath} → {bytesPath}");
             convertedCount++;
         }
 
         AssetDatabase.Refresh();
-        Debug.Log($"Lua 转换完成，共转换：{convertedCount} 个文件");
+        Debug.Log($"Lua 转换完成，共转换并覆盖：{convertedCount} 个文件");
     }
+
 }

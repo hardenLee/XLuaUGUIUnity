@@ -1,7 +1,7 @@
 {
     "FileVersion": "1.0.0",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "2025-07-11-1109",
+    "PackageVersion": "2025-07-11-1133",
     "Wrappers": [
         {
             "BundleGUID": "821202098c16c391fb27cd121315c02a",
@@ -36,7 +36,7 @@
             "FileName": "assets_lua_core.bundle"
         },
         {
-            "BundleGUID": "d744de75260684d73123aa3b8229c6c1",
+            "BundleGUID": "0a11929c5954fe6a7fd2d9cf253bd9c6",
             "FileName": "assets_lua_manager.bundle"
         },
         {
