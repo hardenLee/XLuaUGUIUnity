@@ -21,16 +21,17 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(ABManager);
-			Utils.BeginObjectRegister(type, L, translator, 0, 8, 0, 0);
+			Utils.BeginObjectRegister(type, L, translator, 0, 9, 0, 0);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "LoadAssetSync", _m_LoadAssetSync);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "LoadAndInstantiateAsync", _m_LoadAndInstantiateAsync);
-			Utils.RegisterFunc(L, Utils.METHOD_IDX, "LoadPrefabAsync", _m_LoadPrefabAsync);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "LoadSceneAsync", _m_LoadSceneAsync);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "LoadRawFileAsync", _m_LoadRawFileAsync);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetAssetInfosByTag", _m_GetAssetInfosByTag);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetAllAssetInfos", _m_GetAllAssetInfos);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "ResourcesLoad", _m_ResourcesLoad);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "UnloadAsset", _m_UnloadAsset);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "UnloadAllAssets", _m_UnloadAllAssets);
 			
 			
 			
@@ -125,35 +126,6 @@ namespace XLua.CSObjectWrap
                     string _location = LuaAPI.lua_tostring(L, 2);
                     
                         var gen_ret = gen_to_be_invoked.LoadAndInstantiateAsync( _location );
-                        translator.Push(L, gen_ret);
-                    
-                    
-                    
-                    return 1;
-                }
-                
-            } catch(System.Exception gen_e) {
-                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
-            }
-            
-        }
-        
-        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _m_LoadPrefabAsync(RealStatePtr L)
-        {
-		    try {
-            
-                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
-            
-            
-                ABManager gen_to_be_invoked = (ABManager)translator.FastGetCSObj(L, 1);
-            
-            
-                
-                {
-                    string _location = LuaAPI.lua_tostring(L, 2);
-                    
-                        var gen_ret = gen_to_be_invoked.LoadPrefabAsync( _location );
                         translator.Push(L, gen_ret);
                     
                     
@@ -320,6 +292,61 @@ namespace XLua.CSObjectWrap
                     
                     
                     return 1;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_UnloadAsset(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                ABManager gen_to_be_invoked = (ABManager)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    string _location = LuaAPI.lua_tostring(L, 2);
+                    
+                    gen_to_be_invoked.UnloadAsset( _location );
+                    
+                    
+                    
+                    return 0;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_UnloadAllAssets(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                ABManager gen_to_be_invoked = (ABManager)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    
+                    gen_to_be_invoked.UnloadAllAssets(  );
+                    
+                    
+                    
+                    return 0;
                 }
                 
             } catch(System.Exception gen_e) {

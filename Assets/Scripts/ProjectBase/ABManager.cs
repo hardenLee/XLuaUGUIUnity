@@ -14,19 +14,42 @@ public class ABManager : SingletonAutoMono<ABManager>
     /// <summary> 默认资源包访问器，每次从 YooAssets 获取，确保不为 null </summary>
     private ResourcePackage package => YooAssets.GetPackage("DefaultPackage");
 
+    /// <summary> 资源句柄字典，存储所有加载的资源句柄 </summary>
+    private Dictionary<string,OwenHandleBase> assetHandles = new Dictionary<string, OwenHandleBase>();
+    
     #region ========== 基础资源加载 ==========
 
     /// <summary> 同步加载资源对象 </summary>
     public AssetHandle LoadAssetSync<T>(string location) where T : UnityEngine.Object
     {
-        return package.LoadAssetSync<T>(location);
+        if (!assetHandles.TryGetValue(location, out OwenHandleBase owenHandle))
+        {
+            var yooHandle = package.LoadAssetSync<T>(location);
+            owenHandle = new OwenHandleBase(yooHandle);
+            assetHandles.Add(location, owenHandle);
+        }
+        else
+        {
+            owenHandle.AddRef();
+        }
+        return (AssetHandle)owenHandle.YooHandle;
     }
     
-    /// <summary> 异步加载资源对象并且实例化 </summary>
+    /// <summary> 同步加载资源对象并且实例化 </summary>
     public UnityEngine.Object LoadAssetSync(string location, System.Type type)
     {
-        var handle = package.LoadAssetSync(location, type);
-        var asset = handle.AssetObject;
+        if (!assetHandles.TryGetValue(location, out OwenHandleBase owenHandle))
+        {
+            var yooHandle = package.LoadAssetSync(location, type);
+            owenHandle = new OwenHandleBase(yooHandle);
+            assetHandles.Add(location, owenHandle);
+        }
+        else
+        {
+            owenHandle.AddRef();
+        }
+        
+        var asset = (owenHandle.YooHandle as AssetHandle)?.AssetObject;
 
         if (asset == null)
         {
@@ -47,43 +70,28 @@ public class ABManager : SingletonAutoMono<ABManager>
     /// <summary> 异步加载资源对象，返回 Task 方式 </summary>
     public async Task<GameObject> LoadAndInstantiateAsync(string location)
     {
-        var handle = package.LoadAssetAsync<GameObject>(location);
-        await handle.Task;
+        if (!assetHandles.TryGetValue(location, out OwenHandleBase owenHandle))
+        {
+            var yooHandle = package.LoadAssetAsync<GameObject>(location);
+            owenHandle = new OwenHandleBase(yooHandle);
+            assetHandles.Add(location, owenHandle);
+        }
+        else
+        {
+            owenHandle.AddRef();
+        }
+        
+        //var handle = package.LoadAssetAsync<GameObject>(location);
+        await owenHandle.YooHandle.Task;
 
-        var prefab = handle.AssetObject as GameObject;
+        var prefab = (owenHandle.YooHandle as AssetHandle)?.AssetObject as GameObject;
         if (prefab == null)
         {
             Debug.LogError($"LoadAndInstantiateAsync failed: {location} is not a GameObject.");
             return null;
         }
 
-        return GameObject.Instantiate(prefab);
-    }
-
-    #endregion
-
-    #region ========== 预制体加载并实例化 ==========
-
-    /// <summary> 异步加载并实例化预制体 </summary>
-    public async Task<GameObject> LoadPrefabAsync(string location)
-    {
-        var handle = package.LoadAssetAsync<GameObject>(location);
-        await handle.Task;
-        return handle.InstantiateSync();
-    }
-
-    #endregion
-
-    #region ========== 子资源加载（如图集中的 Sprite） ==========
-
-    /// <summary>
-    /// 异步加载子资源对象（如图集中的 Sprite）
-    /// </summary>
-    public async Task<T> LoadSubAssetAsync<T>(string location, string subName) where T : UnityEngine.Object
-    {
-        var handle = package.LoadSubAssetsAsync<T>(location);
-        await handle.Task;
-        return handle.GetSubAssetObject<T>(subName);
+        return Instantiate(prefab);
     }
 
     #endregion
@@ -171,4 +179,29 @@ public class ABManager : SingletonAutoMono<ABManager>
     }
 
     #endregion
+
+
+    #region ========== 卸载资源 ==========
+
+    /// <summary> 卸载指定位置的资源 </summary>
+    public void UnloadAsset(string location)
+    {
+        if (assetHandles.TryGetValue(location, out OwenHandleBase owenHandle))
+        {
+            owenHandle.Release();
+        }
+    }
+    
+    /// <summary> 卸载所有资源句柄 </summary>
+    public void UnloadAllAssets()
+    {
+        foreach (var kvp in assetHandles)
+        {
+            kvp.Value.Release();
+        }
+        Resources.UnloadUnusedAssets();
+    }
+
+    #endregion
+    
 }

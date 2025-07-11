@@ -18,15 +18,15 @@ function UIManager:LoadAndInstantiatePanel(panelName)
 
     -- 如果没有实例化 panelObj
     if not panel.panelObj then
-        local prefabPath = "Assets/Bundles/Prefabs/UI/" .. panelName .. ".prefab"
+        local prefabPath = self:GetPanelPrefabPath(panelName)
         local prefab = ABManager:LoadAssetSync(prefabPath, typeof(CS.UnityEngine.GameObject))
         if not prefab then
             error("Failed to load panel prefab: " .. prefabPath)
         end
-
         -- 一定要先赋值，再调用 Show
         panel.panelObj = prefab
         panel.panelObj.transform:SetParent(CanvasLow, false)
+        print("UIManager:loadAssetSync", prefabPath)
     end
 
     return panel
@@ -55,11 +55,19 @@ function UIManager:HidePanel(panelName)
     -- 销毁GameObject及相关资源
     if panel.panelObj then
         GameObject.Destroy(panel.panelObj)
+        local prefabPath = self:GetPanelPrefabPath(panelName)
+        ABManager:UnloadAsset(prefabPath)
         panel.panelObj = nil
+        print("UIManager:UnloadAssetSync", prefabPath)
     end
 
     -- 移除缓存，下一次Show会重新加载实例化
     self.panels[panelName] = nil
+end
+
+-- 获取指定面板的预制体路径
+function UIManager:GetPanelPrefabPath(panelName)
+    return "Assets/Bundles/Prefabs/UI/" .. panelName .. ".prefab"
 end
 
 return UIManager
