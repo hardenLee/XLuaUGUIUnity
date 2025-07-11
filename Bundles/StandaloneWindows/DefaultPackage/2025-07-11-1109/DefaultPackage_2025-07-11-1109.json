@@ -1,17 +1,17 @@
 {
     "FileVersion": "2.3.1",
-    "EnableAddressable": false,
+    "EnableAddressable": true,
     "LocationToLower": false,
     "IncludeAssetGUID": false,
-    "OutputNameStyle": 0,
+    "OutputNameStyle": 1,
     "BuildBundleType": 2,
     "BuildPipeline": "ScriptableBuildPipeline",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "1.0.0",
-    "PackageNote": "2025/7/1 15:55:05",
+    "PackageVersion": "2025-07-11-1109",
+    "PackageNote": "2025/7/11 18:29:57",
     "AssetList": [
         {
-            "Address": "",
+            "Address": "01",
             "AssetPath": "Assets/Bundles/Image/UI/Food/01.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -21,7 +21,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "02",
             "AssetPath": "Assets/Bundles/Image/UI/Food/02.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -31,7 +31,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "03",
             "AssetPath": "Assets/Bundles/Image/UI/Food/03.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -41,7 +41,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "04",
             "AssetPath": "Assets/Bundles/Image/UI/Food/04.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -51,7 +51,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "05",
             "AssetPath": "Assets/Bundles/Image/UI/Food/05.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -61,7 +61,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "06",
             "AssetPath": "Assets/Bundles/Image/UI/Food/06.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -71,7 +71,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "07",
             "AssetPath": "Assets/Bundles/Image/UI/Food/07.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -81,7 +81,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "08",
             "AssetPath": "Assets/Bundles/Image/UI/Food/08.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -91,7 +91,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "09",
             "AssetPath": "Assets/Bundles/Image/UI/Food/09.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -101,7 +101,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "食物10",
             "AssetPath": "Assets/Bundles/Image/UI/Food/食物10.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -111,7 +111,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "食物11",
             "AssetPath": "Assets/Bundles/Image/UI/Food/食物11.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -121,7 +121,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "食物12",
             "AssetPath": "Assets/Bundles/Image/UI/Food/食物12.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -131,7 +131,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "食物13",
             "AssetPath": "Assets/Bundles/Image/UI/Food/食物13.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -141,7 +141,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "食物14",
             "AssetPath": "Assets/Bundles/Image/UI/Food/食物14.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -151,7 +151,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "食物15",
             "AssetPath": "Assets/Bundles/Image/UI/Food/食物15.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -161,7 +161,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "删除",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/删除.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -171,7 +171,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "删除栏图标1",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/删除栏图标1.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -181,7 +181,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "右",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/右.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -191,7 +191,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "左",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/左.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -201,7 +201,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "新",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/新.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -211,7 +211,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "星星",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/星星.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -221,7 +221,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "背包",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/背包.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -231,7 +231,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "菜单武器1",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/菜单武器1.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -241,7 +241,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "菜单武器2",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/菜单武器2.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -251,7 +251,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "菜单食物1",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/菜单食物1.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -261,7 +261,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "菜单食物2",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/菜单食物2.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -271,7 +271,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "详情",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/详情.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -281,7 +281,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "返回",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/返回.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -291,7 +291,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "退出",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/退出.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -301,7 +301,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "选中",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/选中.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -311,7 +311,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "销毁",
             "AssetPath": "Assets/Bundles/Image/UI/Icon/销毁.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -321,7 +321,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_01",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_01.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -331,7 +331,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_02",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_02.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -341,7 +341,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_03",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_03.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -351,7 +351,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_04",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_04.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -361,7 +361,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_05",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_05.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -371,7 +371,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_06",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_06.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -381,7 +381,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_07",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_07.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -391,7 +391,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "武器_08",
             "AssetPath": "Assets/Bundles/Image/UI/Weapon/武器_08.png",
             "AssetGUID": "",
             "AssetTags": [
@@ -401,7 +401,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "",
+            "Address": "UIMain",
             "AssetPath": "Assets/Bundles/Prefabs/UI/UIMain.prefab",
             "AssetGUID": "",
             "AssetTags": [
@@ -410,13 +410,13 @@
             "BundleID": 3,
             "DependBundleIDs": [
                 1,
-                5,
-                6,
-                7
+                11,
+                12,
+                13
             ]
         },
         {
-            "Address": "",
+            "Address": "UITest",
             "AssetPath": "Assets/Bundles/Prefabs/UI/UITest.prefab",
             "AssetGUID": "",
             "AssetTags": [
@@ -425,13 +425,13 @@
             "BundleID": 3,
             "DependBundleIDs": [
                 1,
-                5,
-                6,
-                7
+                11,
+                12,
+                13
             ]
         },
         {
-            "Address": "",
+            "Address": "Icon",
             "AssetPath": "Assets/Bundles/SpriteAltas/Icon.spriteatlas",
             "AssetGUID": "",
             "AssetTags": [
@@ -441,6 +441,106 @@
             "DependBundleIDs": [
                 0
             ]
+        },
+        {
+            "Address": "UIPathConfig.lua",
+            "AssetPath": "Assets/Lua/Config/UIPathConfig.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 6,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "LuaUpdate.lua",
+            "AssetPath": "Assets/Lua/Core/LuaUpdate.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 7,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Object.lua",
+            "AssetPath": "Assets/Lua/Core/Object.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 7,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "InitClass.lua",
+            "AssetPath": "Assets/Lua/InitClass.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 5,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Main.lua",
+            "AssetPath": "Assets/Lua/Main.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 5,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "UIManager.lua",
+            "AssetPath": "Assets/Lua/Manager/UIManager.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 8,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "UIMain.lua",
+            "AssetPath": "Assets/Lua/UI/UIMain.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 9,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "UITest.lua",
+            "AssetPath": "Assets/Lua/UI/UITest.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 9,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "JsonUtility.lua",
+            "AssetPath": "Assets/Lua/Utils/JsonUtility.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 10,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "SplitTools.lua",
+            "AssetPath": "Assets/Lua/Utils/SplitTools.lua.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "Home"
+            ],
+            "BundleID": 10,
+            "DependBundleIDs": []
         }
     ],
     "BundleList": [
@@ -494,9 +594,9 @@
             ],
             "DependBundleIDs": [
                 1,
-                5,
-                6,
-                7
+                11,
+                12,
+                13
             ]
         },
         {
@@ -512,6 +612,78 @@
             "DependBundleIDs": [
                 0
             ]
+        },
+        {
+            "BundleName": "assets_lua.bundle",
+            "UnityCRC": 2850204193,
+            "FileHash": "0e7be2e783e30a98f877f2a0d8cab113",
+            "FileCRC": "f334f4d6",
+            "FileSize": 2421,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_lua_config.bundle",
+            "UnityCRC": 560915286,
+            "FileHash": "4f80e65416c3a6771894232cfa613573",
+            "FileCRC": "91b169dc",
+            "FileSize": 1304,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_lua_core.bundle",
+            "UnityCRC": 1485194043,
+            "FileHash": "a1a488d8093fc5b416cf8eccaf3d8c7b",
+            "FileCRC": "15188544",
+            "FileSize": 1844,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_lua_manager.bundle",
+            "UnityCRC": 1458295490,
+            "FileHash": "d744de75260684d73123aa3b8229c6c1",
+            "FileCRC": "ad5da865",
+            "FileSize": 2242,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_lua_ui.bundle",
+            "UnityCRC": 4274039313,
+            "FileHash": "2b4cb100f647515e2ee1733b6e3b8242",
+            "FileCRC": "1b6972d5",
+            "FileSize": 2507,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_lua_utils.bundle",
+            "UnityCRC": 1084543192,
+            "FileHash": "ab095acf204f0178a44cc4cca434c31e",
+            "FileCRC": "af3788cc",
+            "FileSize": 10153,
+            "Encrypted": false,
+            "Tags": [
+                "Home"
+            ],
+            "DependBundleIDs": []
         },
         {
             "BundleName": "share_assets_textmesh_pro_fonts.bundle",
@@ -536,8 +708,8 @@
                 "Home"
             ],
             "DependBundleIDs": [
-                5,
-                7
+                11,
+                13
             ]
         },
         {

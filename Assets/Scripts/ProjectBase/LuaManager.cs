@@ -17,8 +17,8 @@ public class LuaManager : BaseManager<LuaManager>
         //唯一的解析器
         luaEnv = new LuaEnv();
         //添加重定向委托函数
-        luaEnv.AddLoader(MyCustomLoader);
-        luaEnv.AddLoader(MyCustomLoaderFormAB);
+        //luaEnv.AddLoader(CustomLoader);
+        luaEnv.AddLoader(CustomLoaderFormAB);
     }
 
     //Lua总表
@@ -31,7 +31,7 @@ public class LuaManager : BaseManager<LuaManager>
         }
     }
 
-    private byte[] MyCustomLoader(ref string filepath)
+    private byte[] CustomLoader(ref string filepath)
     {
         //测试传入的参数是什么
         Debug.Log("LuaManager" + filepath);
@@ -49,18 +49,24 @@ public class LuaManager : BaseManager<LuaManager>
     }
 
     //再写一个Load 用于从AB包加载Lua文件
-    private byte[] MyCustomLoaderFormAB(ref string filepath)
+    private byte[] CustomLoaderFormAB(ref string filepath)
     {
-        var obj = ABManager.Instance().LoadAssetSync("lua/" + filepath, typeof(TextAsset));
-        TextAsset luaFile = obj as TextAsset;
+        string address = $"Assets/Lua/{filepath}.lua.bytes";
+        Debug.Log($"Trying to load Lua asset at: {address}");
 
-        if (luaFile != null)
+        Object obj = ABManager.Instance().LoadAssetSync(address, typeof(TextAsset));
+        TextAsset luaAsset = obj as TextAsset;
+
+        if (luaAsset != null)
         {
-            return luaFile.bytes;
+            Debug.Log($"Loaded Lua asset successfully: {address}");
+            return luaAsset.bytes;
         }
-
-        Debug.LogError($"MyCustomLoaderFromAB failed to load: {filepath}");
-        return null;
+        else
+        {
+            Debug.LogError($"Failed to load Lua asset from AB: {address}");
+            return null;
+        }
     }
 
     /// <summary>

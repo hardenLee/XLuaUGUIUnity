@@ -18,7 +18,7 @@ MonoBehaviour:
   Packages:
   - PackageName: DefaultPackage
     PackageDesc: 
-    EnableAddressable: 0
+    EnableAddressable: 1
     LocationToLower: 0
     IncludeAssetGUID: 0
     AutoCollectShaders: 1
@@ -57,6 +57,19 @@ MonoBehaviour:
       Collectors:
       - CollectPath: Assets/Bundles/SpriteAltas
         CollectorGUID: 48778527293547b4485e7c6a91cdf755
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Lua
+      GroupDesc: 
+      AssetTags: Home
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Lua
+        CollectorGUID: ceda906ff0b0ef54d9980aaca0ebd14b
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory

@@ -1,39 +1,63 @@
 {
     "FileVersion": "1.0.0",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "1.0.0",
+    "PackageVersion": "2025-07-11-1109",
     "Wrappers": [
         {
-            "BundleGUID": "1fe7ad702da348236d70e1e5c895e587",
-            "FileName": "1fe7ad702da348236d70e1e5c895e587.bundle"
-        },
-        {
-            "BundleGUID": "4e1f8ae0b6aafd1139dc803769b6ca3c",
-            "FileName": "4e1f8ae0b6aafd1139dc803769b6ca3c.bundle"
+            "BundleGUID": "821202098c16c391fb27cd121315c02a",
+            "FileName": "assets_bundles_image_ui_food.bundle"
         },
         {
             "BundleGUID": "6354e07e9a4b33b6a446aa24f5c720bb",
-            "FileName": "6354e07e9a4b33b6a446aa24f5c720bb.bundle"
-        },
-        {
-            "BundleGUID": "821202098c16c391fb27cd121315c02a",
-            "FileName": "821202098c16c391fb27cd121315c02a.bundle"
+            "FileName": "assets_bundles_image_ui_icon.bundle"
         },
         {
             "BundleGUID": "9925297d62192c1827422598c351b7ea",
-            "FileName": "9925297d62192c1827422598c351b7ea.bundle"
+            "FileName": "assets_bundles_image_ui_weapon.bundle"
+        },
+        {
+            "BundleGUID": "4e1f8ae0b6aafd1139dc803769b6ca3c",
+            "FileName": "assets_bundles_prefabs_ui.bundle"
         },
         {
             "BundleGUID": "ac278e96dbeba9d7757ee65a82c71bcc",
-            "FileName": "ac278e96dbeba9d7757ee65a82c71bcc.bundle"
+            "FileName": "assets_bundles_spritealtas.bundle"
+        },
+        {
+            "BundleGUID": "0e7be2e783e30a98f877f2a0d8cab113",
+            "FileName": "assets_lua.bundle"
+        },
+        {
+            "BundleGUID": "4f80e65416c3a6771894232cfa613573",
+            "FileName": "assets_lua_config.bundle"
+        },
+        {
+            "BundleGUID": "a1a488d8093fc5b416cf8eccaf3d8c7b",
+            "FileName": "assets_lua_core.bundle"
+        },
+        {
+            "BundleGUID": "d744de75260684d73123aa3b8229c6c1",
+            "FileName": "assets_lua_manager.bundle"
+        },
+        {
+            "BundleGUID": "2b4cb100f647515e2ee1733b6e3b8242",
+            "FileName": "assets_lua_ui.bundle"
+        },
+        {
+            "BundleGUID": "ab095acf204f0178a44cc4cca434c31e",
+            "FileName": "assets_lua_utils.bundle"
+        },
+        {
+            "BundleGUID": "1fe7ad702da348236d70e1e5c895e587",
+            "FileName": "share_assets_textmesh_pro_fonts.bundle"
         },
         {
             "BundleGUID": "eb49b40ff2c9fa6f07a769eea046c0b3",
-            "FileName": "eb49b40ff2c9fa6f07a769eea046c0b3.bundle"
+            "FileName": "share_assets_textmesh_pro_resources_fonts_&_materials.bundle"
         },
         {
             "BundleGUID": "ee6e1a6d61892f23d5d2144bcfcdcc0a",
-            "FileName": "ee6e1a6d61892f23d5d2144bcfcdcc0a.bundle"
+            "FileName": "unityshaders.bundle"
         }
     ]
 }
