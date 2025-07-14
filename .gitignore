@@ -38,3 +38,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# 忽略 StreamingAssets 文件夹及其 .meta 文件
+Assets/StreamingAssets/
+Assets/StreamingAssets.meta
