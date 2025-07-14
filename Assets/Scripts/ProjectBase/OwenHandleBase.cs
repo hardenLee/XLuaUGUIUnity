@@ -19,12 +19,16 @@ public class OwenHandleBase
         OwenRefCount++;
     }
 
-    public void Release()
+    public bool Release()
     {
         OwenRefCount--;
+
         if (OwenRefCount <= 0)
         {
             YooHandle.Release();
+            return true; // 表示已完全释放
         }
+
+        return false;
     }
 }

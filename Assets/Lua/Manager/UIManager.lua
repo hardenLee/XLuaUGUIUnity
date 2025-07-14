@@ -56,8 +56,7 @@ function UIManager:HidePanel(panelName)
     if panel.panelObj then
         GameObject.Destroy(panel.panelObj)
         local prefabPath = self:GetPanelPrefabPath(panelName)
-        --ABManager:UnloadAsset(prefabPath)
-
+        ABManager:UnloadAsset(prefabPath)
         panel.panelObj = nil
         print("UIManager:UnloadAssetSync", prefabPath)
     end

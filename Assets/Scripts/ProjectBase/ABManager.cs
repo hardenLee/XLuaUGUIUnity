@@ -188,7 +188,12 @@ public class ABManager : SingletonAutoMono<ABManager>
     {
         if (assetHandles.TryGetValue(location, out OwenHandleBase owenHandle))
         {
-            owenHandle.Release();
+            bool fullyReleased = owenHandle.Release();
+
+            if (fullyReleased)
+            {
+                assetHandles.Remove(location);
+            }
         }
     }
     

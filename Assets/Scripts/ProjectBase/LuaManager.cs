@@ -12,13 +12,23 @@ public class LuaManager : BaseManager<LuaManager>
     private LuaEnv luaEnv; // 确保这个 LuaEnv 是被正确初始化的  
     private LuaTable luaUpdateTable; // 用于存储 LuaUpdate 对象 ///-->【调用Update方法】<--
 
-    public void Init()
+    public void Init(GlobalConfig globalConfig)
     {
         //唯一的解析器
         luaEnv = new LuaEnv();
+
         //添加重定向委托函数
-        //luaEnv.AddLoader(CustomLoader);
-        luaEnv.AddLoader(CustomLoaderFormAB);
+        switch (globalConfig.operatingMode)
+        {
+            case OperatingMode.EditorSimulateMode:
+                luaEnv.AddLoader(CustomLoader);
+                break;
+            case OperatingMode.OfflinePlayMode:
+            case OperatingMode.HostPlayMode:
+            case OperatingMode.WebPlayMode:
+                luaEnv.AddLoader(CustomLoaderFormAB);
+                break;
+        }
     }
 
     //Lua总表

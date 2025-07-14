@@ -6,21 +6,26 @@ using UnityEngine;
 public class AppStart : MonoBehaviour
 {
     private YooAssetsInit yooAssetsInit;
-    public OperatingMode operatingMode = OperatingMode.EditorSimulateMode;
-    
+    private GlobalConfig globalConfig;
     private bool luaReady = false;
     
     private void Awake()
     {
+        Init();
         DontDestroyOnLoad(gameObject);
         yooAssetsInit = new YooAssetsInit();
     }
 
+    private void Init()
+    {
+        globalConfig = Resources.Load<GlobalConfig>("GlobalConfig");
+    }
+
     private IEnumerator Start()
     {
-        yield return yooAssetsInit.InitializeAndUpdate(operatingMode);
+        yield return yooAssetsInit.InitializeAndUpdate(globalConfig.operatingMode);
         
-        LuaManager.Instance().Init();
+        LuaManager.Instance().Init(globalConfig);
         LuaManager.Instance().DoLuaFile("Main");
 
         luaReady = true;
